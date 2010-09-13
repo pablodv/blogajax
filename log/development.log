@@ -1,0 +1,1113 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (84.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (45.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100913141458)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100913141458')[0m
+Migrating to CreateComments (20100913141627)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" integer, "created_at" date, "comment" text, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100913141627')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("posts")[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:19:55) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:20:20) [GET]
+Rendering posts/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:22:25) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.find):
+  app/controllers/posts_controller.rb:4:in `index'
+
+Rendered rescues/_trace (35.6ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100913141458)
+Migrating to CreateComments (20100913141627)
+Migrating to AddAuthorPost (20100913142339)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100913141458)
+Migrating to CreateComments (20100913141627)
+Migrating to AddAuthorPost (20100913142339)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "posts" ADD "author" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100913142339')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("posts")[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:26:11) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.find):
+  app/controllers/posts_controller.rb:4:in `index'
+
+Rendered rescues/_trace (35.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-13 11:29:10) [GET]
+Rendering posts/new
+Completed in 15ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-13 11:31:05) [GET]
+Rendering posts/new
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-13 11:31:06) [GET]
+Rendering posts/new
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-13 11:31:09) [GET]
+Rendering posts/new
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-13 11:31:18) [GET]
+Rendering posts/new
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-13 11:32:07) [GET]
+Rendering posts/new
+Rendered posts/_form (2.3ms)
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#list (for 127.0.0.1 at 2010-09-13 11:32:16) [GET]
+
+ActionController::UnknownAction (No action responded to list. Actions: create, index, and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-13 11:33:27) [GET]
+Rendering posts/new
+Rendered posts/_form (1.3ms)
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:33:30) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.find):
+  app/controllers/posts_controller.rb:4:in `index'
+
+Rendered rescues/_trace (87.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-13 11:34:21) [GET]
+Rendering posts/new
+Rendered posts/_form (1.9ms)
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-09-13 11:35:02) [POST]
+  Parameters: {"commit"=>"Create", "post"=>{"author"=>"Lorem Ipsum", "body"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", "title"=>"Lorem Ipsum"}, "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU="}
+  [4;36;1mPost Create (0.4ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "body", "author", "updated_at") VALUES('2010-09-13 14:35:02', 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 'Lorem Ipsum', '2010-09-13 14:35:02')[0m
+Redirected to http://localhost:3000/posts/list
+Completed in 111ms (DB: 0) | 302 Found [http://localhost/posts/create]
+
+
+Processing PostsController#list (for 127.0.0.1 at 2010-09-13 11:35:02) [GET]
+
+ActionController::UnknownAction (No action responded to list. Actions: create, index, and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#list (for 127.0.0.1 at 2010-09-13 11:35:43) [GET]
+
+ActionController::UnknownAction (No action responded to list. Actions: create, index, and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:35:48) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.find):
+  app/controllers/posts_controller.rb:4:in `index'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-09-13 11:35:54) [POST]
+  Parameters: {"commit"=>"Create", "post"=>{"author"=>"Lorem Ipsum", "body"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", "title"=>"Lorem Ipsum"}, "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU="}
+  [4;35;1mPost Create (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "body", "author", "updated_at") VALUES('2010-09-13 14:35:54', 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 'Lorem Ipsum', '2010-09-13 14:35:54')[0m
+Redirected to http://localhost:3000/posts
+Completed in 107ms (DB: 0) | 302 Found [http://localhost/posts/create]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:35:54) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.find):
+  app/controllers/posts_controller.rb:4:in `index'
+
+Rendered rescues/_trace (84.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:37:06) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.find):
+  app/controllers/posts_controller.rb:4:in `index'
+
+Rendered rescues/_trace (32.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:37:06) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.find):
+  app/controllers/posts_controller.rb:4:in `index'
+
+Rendered rescues/_trace (34.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:37:07) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.find):
+  app/controllers/posts_controller.rb:4:in `index'
+
+Rendered rescues/_trace (35.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:37:07) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.find):
+  app/controllers/posts_controller.rb:4:in `index'
+
+Rendered rescues/_trace (34.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:37:07) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.find):
+  app/controllers/posts_controller.rb:4:in `index'
+
+Rendered rescues/_trace (93.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:37:45) [GET]
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering posts/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:38:05) [GET]
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering posts/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:38:12) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering posts/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:39:01) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (undefined local variable or method `articles_path' for #<ActionView::Base:0xb6807224>) on line #18 of app/views/layouts/application.html.erb:
+15: 	<div class="main_left">
+16: 
+17: 		<div class="header">
+18: 			<h1><%= link_to 'Ruby on Rails', articles_path %></h1>
+19: 		</div>
+20: 
+21: 		<div class="link_menu">
+
+    app/views/layouts/application.html.erb:18
+
+Rendered rescues/_trace (94.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:39:47) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (undefined local variable or method `posts_path' for #<ActionView::Base:0xb68cc218>) on line #18 of app/views/layouts/application.html.erb:
+15: 	<div class="main_left">
+16: 
+17: 		<div class="header">
+18: 			<h1><%= link_to 'Ruby on Rails', posts_path %></h1>
+19: 		</div>
+20: 
+21: 		<div class="link_menu">
+
+    app/views/layouts/application.html.erb:18
+
+Rendered rescues/_trace (41.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:40:05) [GET]
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (undefined local variable or method `post_path' for #<ActionView::Base:0xb6770f54>) on line #18 of app/views/layouts/application.html.erb:
+15: 	<div class="main_left">
+16: 
+17: 		<div class="header">
+18: 			<h1><%= link_to 'Ruby on Rails', post_path %></h1>
+19: 		</div>
+20: 
+21: 		<div class="link_menu">
+
+    app/views/layouts/application.html.erb:18
+
+Rendered rescues/_trace (104.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:40:23) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (undefined local variable or method `posts_path' for #<ActionView::Base:0xb6848e40>) on line #22 of app/views/layouts/application.html.erb:
+19: 		</div>
+20: 
+21: 		<div class="link_menu">
+22: 			<%= link_to 'Home', posts_path %>
+23:                         <%= link_to 'Add Article', new_post_path %>
+24: 			<a href="index.html" accesskey="3">Elemen</a>
+25: 			<a href="index.html" accesskey="4">Maecenas</a>
+
+    app/views/layouts/application.html.erb:22
+
+Rendered rescues/_trace (41.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:40:35) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (undefined local variable or method `new_post_path' for #<ActionView::Base:0xb66ee34c>) on line #23 of app/views/layouts/application.html.erb:
+20: 
+21: 		<div class="link_menu">
+22: 			<%#= link_to 'Home', posts_path %>
+23:                         <%= link_to 'Add Article', new_post_path %>
+24: 			<a href="index.html" accesskey="3">Elemen</a>
+25: 			<a href="index.html" accesskey="4">Maecenas</a>
+26: 		</div>
+
+    app/views/layouts/application.html.erb:23
+
+Rendered rescues/_trace (41.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:40:54) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-13 11:40:54) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/default.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:41:31) [GET]
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:44:24) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 80ms (View: 67, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:45:05) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:45:06) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-13 11:45:07) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (1.4ms)
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:45:16) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-13 11:49:25) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (1.3ms)
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:49:29) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:50:26) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (undefined method `post_path' for #<ActionView::Base:0xb674fc3c>) on line #2 of app/views/posts/index.html.erb:
+1: <% @posts.each do |p| %>
+2:   <%= link_to p.title, p %>
+3:   <%= p.title %><br/>
+4:   <%= p.author %><br/>
+5:   <%= p.body %><br/>
+
+    app/views/posts/index.html.erb:2
+    app/views/posts/index.html.erb:1:in `each'
+    app/views/posts/index.html.erb:1
+
+Rendered rescues/_trace (47.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:51:32) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:56:00) [GET]
+  [4;35;1mPost Load (1.0ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 11:56:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 62ms (View: 58, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 11:57:18) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 11:57:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 11:58:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 11:59:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:00:37) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:00:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 12:00:39) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:00:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:03:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/posts/show.html.erb:
+6: 
+7: <ul>
+8:   <div id="comments">
+9:     <% @post_comments.each do |comment| %>
+10:         <%= render :partial=>"comment", :object => comment %>
+11:     <% end %>
+12:   </div>
+
+    app/views/posts/show.html.erb:9
+
+Rendered rescues/_trace (41.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:04:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/posts/show.html.erb:
+6: 
+7: <ul>
+8:   <div id="comments">
+9:     <% @post_comments.each do |comment| %>
+10:         <%= render :partial=>"comment", :object => comment %>
+11:     <% end %>
+12:   </div>
+
+    app/views/posts/show.html.erb:9
+
+Rendered rescues/_trace (42.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:04:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#post_comment (for 127.0.0.1 at 2010-09-13 12:04:48) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionController::UnknownAction (No action responded to post_comment. Actions: create, index, new, and show):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#post_comment (for 127.0.0.1 at 2010-09-13 12:04:49) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionController::UnknownAction (No action responded to post_comment. Actions: create, index, new, and show):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#post_comment (for 127.0.0.1 at 2010-09-13 12:04:50) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionController::UnknownAction (No action responded to post_comment. Actions: create, index, new, and show):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#post_comment (for 127.0.0.1 at 2010-09-13 12:04:50) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionController::UnknownAction (No action responded to post_comment. Actions: create, index, new, and show):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#post_comment (for 127.0.0.1 at 2010-09-13 12:04:50) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionController::UnknownAction (No action responded to post_comment. Actions: create, index, new, and show):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#post_comment (for 127.0.0.1 at 2010-09-13 12:04:50) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionController::UnknownAction (No action responded to post_comment. Actions: create, index, new, and show):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#post_comment (for 127.0.0.1 at 2010-09-13 12:04:51) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionController::UnknownAction (No action responded to post_comment. Actions: create, index, new, and show):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#post_comment (for 127.0.0.1 at 2010-09-13 12:06:57) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', '2010-09-13 12:06:57', '2010-09-13 15:06:57', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:1)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:1)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:3)
+Rendered posts/_comment (2.5ms)
+Completed in 87ms (View: 10, DB: 0) | 200 OK [http://localhost/posts/post_comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:08:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/posts/show.html.erb:
+6: 
+7: <ul>
+8:   <div id="comments">
+9:     <% @post_comments.each do |comment| %>
+10:         <%= render :partial=>"comment", :object => comment %>
+11:     <% end %>
+12:   </div>
+
+    app/views/posts/show.html.erb:9
+
+Rendered rescues/_trace (97.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mComment Create (0.3ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Pablo', '2010-09-13 12:10:06', '2010-09-13 15:10:06', 1)[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:10:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/posts/show.html.erb:
+6: 
+7: <ul>
+8:   <div id="comments">
+9:     <% @post_comments.each do |comment| %>
+10:         <%= render :partial=>"comment", :object => comment %>
+11:     <% end %>
+12:   </div>
+
+    app/views/posts/show.html.erb:9
+
+Rendered rescues/_trace (42.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:10:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/posts/show.html.erb:
+6: 
+7: <ul>
+8:   <div id="comments">
+9:     <% @post_comments.each do |comment| %>
+10:         <%= render :partial=>"comment", :object => comment %>
+11:     <% end %>
+12:   </div>
+
+    app/views/posts/show.html.erb:9
+
+Rendered rescues/_trace (102.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:10:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/posts/show.html.erb:
+6: 
+7: <ul>
+8:   <div id="comments">
+9:     <% @post_comments.each do |comment| %>
+10:         <%= render :partial=>"comment", :object => comment %>
+11:     <% end %>
+12:   </div>
+
+    app/views/posts/show.html.erb:9
+
+Rendered rescues/_trace (42.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:10:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/posts/show.html.erb:
+6: 
+7: <ul>
+8:   <div id="comments">
+9:     <% @post_comments.each do |comment| %>
+10:         <%= render :partial=>"comment", :object => comment %>
+11:     <% end %>
+12:   </div>
+
+    app/views/posts/show.html.erb:9
+
+Rendered rescues/_trace (100.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:10:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/posts/show.html.erb:
+6: 
+7: <ul>
+8:   <div id="comments">
+9:     <% @post_comments.each do |comment| %>
+10:         <%= render :partial=>"comment", :object => comment %>
+11:     <% end %>
+12:   </div>
+
+    app/views/posts/show.html.erb:9
+
+Rendered rescues/_trace (42.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:10:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/posts/show.html.erb:
+6: 
+7: <ul>
+8:   <div id="comments">
+9:     <% @post_comments.each do |comment| %>
+10:         <%= render :partial=>"comment", :object => comment %>
+11:     <% end %>
+12:   </div>
+
+    app/views/posts/show.html.erb:9
+
+Rendered rescues/_trace (43.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:11:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.6ms)
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#post_comment (for 127.0.0.1 at 2010-09-13 12:11:55) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 12:11:55', '2010-09-13 15:11:55', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:1)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:1)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:3)
+Rendered posts/_comment (1.2ms)
+Completed in 76ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/post_comment]
+
+
+Processing PostsController#post_comment (for 127.0.0.1 at 2010-09-13 12:12:01) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ', '2010-09-13 12:12:01', '2010-09-13 15:12:01', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:1)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:1)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:3)
+Rendered posts/_comment (1.2ms)
+Completed in 86ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/post_comment]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 12:12:15) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:12:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (2.2ms)
+Completed in 18ms (View: 9, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#post_comment (for 127.0.0.1 at 2010-09-13 12:12:24) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ', '2010-09-13 12:12:24', '2010-09-13 15:12:24', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:1)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:1)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:3)
+Rendered posts/_comment (1.3ms)
+Completed in 73ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/post_comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:16:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (2.0ms)
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:16:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (2.0ms)
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 12:18:07) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:18:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-13 12:18:11) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (1.5ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 12:18:12) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:18:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.5ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:18:29) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2010-09-13 12:18:29', '2010-09-13 15:18:29', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.0ms)
+Completed in 87ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:20:00) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2010-09-13 12:20:00', '2010-09-13 15:20:00', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 93ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:20:19) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2010-09-13 12:20:19', '2010-09-13 15:20:19', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 80ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-13 12:21:55) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (1.3ms)
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 12:22:03) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:22:05) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:22:13) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '2010-09-13 12:22:13', '2010-09-13 15:22:13', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.0ms)
+Completed in 133ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-13 12:22:17) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (1.6ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 12:22:19) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-13 12:22:20) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (1.4ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-13 12:23:10) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (1.3ms)
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 12:23:12) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 12:24:24) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 12:24:34) [GET]
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/posts]

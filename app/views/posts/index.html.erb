@@ -1,0 +1,6 @@
+<% @posts.each do |p| %>
+  <%= link_to p.title, p %>
+  <div class="descr"><%= p.author %></div>
+  <%=h truncate(p.body.gsub(/<.*?>/,''), :length => 100) %><br/>
+  <br/>
+<% end %>
