@@ -1111,3 +1111,3067 @@ Processing PostsController#index (for 127.0.0.1 at 2010-09-13 12:24:34) [GET]
 Rendering template within layouts/application
 Rendering posts/index
 Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:33:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 12:41:34) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 12:45:38) [GET]
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:45:40) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 12:45:46) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:45:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (Missing template comments/_comment.erb in view path app/views) on line #10 of app/views/posts/show.html.erb:
+7: <ul>
+8:   <div id="comments">
+9:     <%# @comments.each do |comment| %>
+10:         <%= render @comments %> <%#= render :partial=>"comment", :object => comment %>
+11:     <%# end %>
+12:   </div>
+13: </ul>
+
+    app/views/posts/show.html.erb:10
+
+Rendered rescues/_trace (99.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:48:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (2.2ms)
+Completed in 18ms (View: 10, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:48:25) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. "}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', '2010-09-13 12:48:25', '2010-09-13 15:48:25', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 86ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 12:48:37) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:48:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 12:48:40) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:48:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (2.0ms)
+Completed in 62ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:49:56) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. "}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', '2010-09-13 12:49:56', '2010-09-13 15:49:56', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.1ms)
+Completed in 113ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:49:58) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. "}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', '2010-09-13 12:49:58', '2010-09-13 15:49:58', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 86ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:50:01) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. "}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.4ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', '2010-09-13 12:50:01', '2010-09-13 15:50:01', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 89ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:50:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.5ms)
+Completed in 18ms (View: 6, DB: 1) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:50:08) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. "}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', '2010-09-13 12:50:08', '2010-09-13 15:50:08', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.1ms)
+Completed in 70ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:50:14) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 12:50:14', '2010-09-13 15:50:14', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.0ms)
+Completed in 64ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:50:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.7ms)
+Completed in 19ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 12:50:22) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:50:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:50:29) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. "}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', '2010-09-13 12:50:29', '2010-09-13 15:50:29', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 83ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:50:32) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 12:50:32', '2010-09-13 15:50:32', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 75ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:50:33) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 12:50:33', '2010-09-13 15:50:33', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 83ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:50:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:52:57) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 12:52:57', '2010-09-13 15:52:57', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 100ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+  [4;36;1mComment Load (1.2ms)[0m   [0;1mSELECT * FROM "comments" [0m
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:53:53) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 12:53:53', '2010-09-13 15:53:53', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.0ms)
+Completed in 112ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:54:02) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 12:54:02', '2010-09-13 15:54:02', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 81ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:56:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:56:21) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (34.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:56:25) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (34.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:56:25) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (35.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:56:25) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (34.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:56:25) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (90.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:56:26) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (34.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:56:26) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (33.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:56:26) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (35.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:56:27) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (34.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:56:27) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (92.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:56:27) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (34.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:56:27) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (33.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:56:27) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (36.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:56:27) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (33.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:56:28) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (96.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:57:01) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (34.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:57:02) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (33.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:57:02) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (36.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:57:02) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (34.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:57:03) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (94.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:57:03) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:57:03) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (33.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:57:04) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (36.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:57:04) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (33.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:59:26) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/posts_controller.rb:32:in `comment'
+
+Rendered rescues/_trace (91.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:59:27) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/posts_controller.rb:32:in `comment'
+
+Rendered rescues/_trace (33.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:59:27) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/posts_controller.rb:32:in `comment'
+
+Rendered rescues/_trace (33.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:59:28) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/posts_controller.rb:32:in `comment'
+
+Rendered rescues/_trace (90.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:59:28) [POST]
+  Parameters: {"comment"=>{"comment"=>":comment"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/posts_controller.rb:32:in `comment'
+
+Rendered rescues/_trace (32.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 12:59:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 19ms (View: 4, DB: 1) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:59:45) [POST]
+  Parameters: {"comment"=>{"comment"=>"orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem "}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/posts_controller.rb:32:in `comment'
+
+Rendered rescues/_trace (92.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:59:46) [POST]
+  Parameters: {"comment"=>{"comment"=>"orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem "}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/posts_controller.rb:32:in `comment'
+
+Rendered rescues/_trace (33.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 12:59:47) [POST]
+  Parameters: {"comment"=>{"comment"=>"orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem "}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/posts_controller.rb:32:in `comment'
+
+Rendered rescues/_trace (91.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 13:00:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 31ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 13:00:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 13:00:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:00:16) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/posts_controller.rb:32:in `comment'
+
+Rendered rescues/_trace (83.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:00:17) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/posts_controller.rb:32:in `comment'
+
+Rendered rescues/_trace (34.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:00:17) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/posts_controller.rb:32:in `comment'
+
+Rendered rescues/_trace (32.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:00:52) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 13:00:52', '2010-09-13 16:00:52', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 88ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 13:02:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 69ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:02:17) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (35.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:02:18) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (33.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:02:18) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (36.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:02:18) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (34.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 13:02:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 17ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 13:02:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 70ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:02:36) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (35.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:02:37) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (33.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:02:37) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (37.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:02:37) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (33.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:02:38) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (95.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 13:03:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:03:20) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (34.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:03:21) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (87.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:03:22) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (35.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:03:22) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (34.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:03:22) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (94.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:03:22) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (33.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:03:22) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (92.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:03:23) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (34.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:04:49) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:notice] = 'Comment was successfully added.'"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (33.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 13:04:50) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (4.4ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 18ms (View: 5, DB: 5) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:04:53) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (35.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:04:53) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (33.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:04:54) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (92.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:05:59) [POST]
+  Parameters: {"comment"=>{"comment"=>"@comment ="}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (33.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:06:59) [POST]
+  Parameters: {"comment"=>{"comment"=>"@comment ="}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (93.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 13:07:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 22ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:07:04) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash.keep(:post_id)"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (34.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:07:05) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash.keep(:post_id)"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (88.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:07:05) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash.keep(:post_id)"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (35.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:07:31) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash.keep(:post_id)"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (33.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:07:32) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash.keep(:post_id)"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (93.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:07:32) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash.keep(:post_id)"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (33.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 13:07:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (3.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 17ms (View: 4, DB: 4) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:07:35) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash.keep(:post_id)"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (89.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:07:36) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash.keep(:post_id)"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (33.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:07:36) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash.keep(:post_id)"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (95.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 13:08:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 20ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:08:14) [POST]
+  Parameters: {"comment"=>{"comment"=>"[:comment]"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (35.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:08:15) [POST]
+  Parameters: {"comment"=>{"comment"=>"[:comment]"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (84.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:08:15) [POST]
+  Parameters: {"comment"=>{"comment"=>"[:comment]"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (36.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:08:15) [POST]
+  Parameters: {"comment"=>{"comment"=>"[:comment]"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:27:in `comment'
+
+Rendered rescues/_trace (34.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 13:09:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:09:17) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:post_id]"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (36.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:09:19) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:post_id]"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (33.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 13:09:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:09:49) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:post_id]"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (35.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:09:50) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:post_id]"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (34.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:09:50) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:post_id]"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (91.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:09:50) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:post_id]"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (34.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:09:50) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:post_id]"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (90.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:09:50) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:post_id]"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (35.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:09:50) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:post_id]"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (34.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:09:51) [POST]
+  Parameters: {"comment"=>{"comment"=>"flash[:post_id]"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (94.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 13:10:28) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 17ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:10:30) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 13:10:30', '2010-09-13 16:10:30', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (38.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:10:30) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 13:10:30', '2010-09-13 16:10:30', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (92.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:10:30) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 13:10:30', '2010-09-13 16:10:30', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (41.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:10:31) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 13:10:31', '2010-09-13 16:10:31', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (97.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:11:59) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 13:11:59', '2010-09-13 16:11:59', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (39.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 13:12:01) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 13:12:02) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:12:05) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 13:12:05', '2010-09-13 16:12:05', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (96.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:12:05) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 13:12:05', '2010-09-13 16:12:05', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (36.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:12:05) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 13:12:05', '2010-09-13 16:12:05', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (104.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 13:12:06) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 13:12:06', '2010-09-13 16:12:06', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (44.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-13 14:46:17) [GET]
+
+ActionController::RoutingError (No route matches "/articles" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 14:46:26) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 28ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 14:46:29) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 14:46:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 17ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:46:35) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.4ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:46:35', '2010-09-13 17:46:35', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (94.3ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:46:36) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:46:36', '2010-09-13 17:46:36', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (44.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:46:36) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:46:36', '2010-09-13 17:46:36', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (40.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:46:37) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:46:37', '2010-09-13 17:46:37', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (46.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:47:30) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:47:30', '2010-09-13 17:47:30', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (36.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 14:47:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 23ms (View: 7, DB: 1) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:47:38) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:47:38', '2010-09-13 17:47:38', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (39.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 14:47:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (5.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 19ms (View: 4, DB: 5) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:47:57) [POST]
+  Parameters: {"comment"=>{"comment"=>"qwe"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('qwe', '2010-09-13 14:47:57', '2010-09-13 17:47:57', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (97.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:52:41) [POST]
+  Parameters: {"comment"=>{"comment"=>"qwe"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('qwe', '2010-09-13 14:52:41', '2010-09-13 17:52:41', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (38.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:52:42) [POST]
+  Parameters: {"comment"=>{"comment"=>"qwe"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('qwe', '2010-09-13 14:52:42', '2010-09-13 17:52:42', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (38.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:52:42) [POST]
+  Parameters: {"comment"=>{"comment"=>"qwe"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('qwe', '2010-09-13 14:52:42', '2010-09-13 17:52:42', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (40.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:52:42) [POST]
+  Parameters: {"comment"=>{"comment"=>"qwe"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('qwe', '2010-09-13 14:52:42', '2010-09-13 17:52:42', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (40.3ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:52:42) [POST]
+  Parameters: {"comment"=>{"comment"=>"qwe"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('qwe', '2010-09-13 14:52:42', '2010-09-13 17:52:42', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (104.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 14:53:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (6.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 21ms (View: 5, DB: 6) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:53:22) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:53:22', '2010-09-13 17:53:22', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (39.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 14:54:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (5.0ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 25ms (View: 8, DB: 5) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:54:03) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:54:03', '2010-09-13 17:54:03', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (43.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:54:04) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:54:04', '2010-09-13 17:54:04', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (38.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:54:04) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:54:04', '2010-09-13 17:54:04', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (45.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:54:04) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:54:04', '2010-09-13 17:54:04', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (41.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:54:05) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:54:05', '2010-09-13 17:54:05', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (103.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:54:05) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:54:05', '2010-09-13 17:54:05', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (40.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:54:07) [POST]
+  Parameters: {"comment"=>{"comment"=>"w"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('w', '2010-09-13 14:54:07', '2010-09-13 17:54:07', NULL)[0m
+Redirected to http://localhost:3000/posts/show
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/posts_controller.rb:36:in `comment'
+
+Rendered rescues/_trace (96.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:55:47) [POST]
+  Parameters: {"comment"=>{"comment"=>"w"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('w', '2010-09-13 14:55:47', '2010-09-13 17:55:47', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.3ms)
+Completed in 93ms (View: 9, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 14:55:51) [GET]
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 14:55:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 14:56:49) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 14:56:50) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:56:51) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:56:51', '2010-09-13 17:56:51', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 95ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 14:57:17) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (39.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 58ms (View: 5, DB: 39) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:57:18) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:57:18', '2010-09-13 17:57:18', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 75ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 14:57:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 22ms (View: 5, DB: 1) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:57:35) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:57:35', '2010-09-13 17:57:35', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 85ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:57:51) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:57:51', '2010-09-13 17:57:51', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 80ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 14:58:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 20ms (View: 5, DB: 1) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:58:10) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:58:10', '2010-09-13 17:58:10', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 63ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:58:11) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:58:11', '2010-09-13 17:58:11', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.0ms)
+Completed in 115ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 14:59:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 16ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:59:02) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:59:02', '2010-09-13 17:59:02', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.0ms)
+Completed in 86ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 14:59:58) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 20ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 14:59:59) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 14:59:59', '2010-09-13 17:59:59', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (2.3ms)
+Completed in 91ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:01:07) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:01:07', '2010-09-13 18:01:07', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 98ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 15:01:11) [GET]
+  [4;35;1mPost Load (2.7ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 12ms (View: 5, DB: 3) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 15:01:13) [GET]
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:01:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.8ms)
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:01:19) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:01:19', '2010-09-13 18:01:19', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.0ms)
+Completed in 57ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:02:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (4.9ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.5ms)
+Completed in 21ms (View: 6, DB: 5) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:02:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.5ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:02:17) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+TypeError (Symbol as array index):
+  app/controllers/posts_controller.rb:28:in `[]'
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (83.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:02:18) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+TypeError (Symbol as array index):
+  app/controllers/posts_controller.rb:28:in `[]'
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (34.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:02:21) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+TypeError (Symbol as array index):
+  app/controllers/posts_controller.rb:28:in `[]'
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (33.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:02:21) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+TypeError (Symbol as array index):
+  app/controllers/posts_controller.rb:28:in `[]'
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (92.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:02:21) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+TypeError (Symbol as array index):
+  app/controllers/posts_controller.rb:28:in `[]'
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:02:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.6ms)
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:02:41) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+TypeError (Symbol as array index):
+  app/controllers/posts_controller.rb:28:in `[]'
+  app/controllers/posts_controller.rb:28:in `comment'
+
+Rendered rescues/_trace (84.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:03:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.5ms)
+Completed in 19ms (View: 6, DB: 1) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:03:05) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:03:05', '2010-09-13 18:03:05', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.0ms)
+Completed in 118ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:03:11) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:03:11', '2010-09-13 18:03:11', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.1ms)
+Completed in 61ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#1 (for 127.0.0.1 at 2010-09-13 15:04:36) [GET]
+
+ActionController::UnknownAction (No action responded to 1. Actions: comment, create, index, new, and show):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 15:04:44) [GET]
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (undefined method `post_path' for #<ActionView::Base:0xb6ecd130>) on line #2 of app/views/posts/index.html.erb:
+1: <% @posts.each do |p| %>
+2:   <%= link_to p.title, p %>
+3:   <div class="descr"><%= p.author %></div>
+4:   <%=h truncate(p.body.gsub(/<.*?>/,''), :length => 100) %><br/>
+5:   <br/>
+
+    app/views/posts/index.html.erb:2
+    app/views/posts/index.html.erb:1:in `each'
+    app/views/posts/index.html.erb:1
+
+Rendered rescues/_trace (100.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 15:06:36) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:06:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:06:41) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:06:41', '2010-09-13 18:06:41', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 104ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:07:35) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:07:35', '2010-09-13 18:07:35', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.0ms)
+Completed in 133ms (View: 52, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:07:36) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:07:36', '2010-09-13 18:07:36', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.0ms)
+Completed in 87ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:07:49) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 15ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:07:51) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:07:51', '2010-09-13 18:07:51', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.3ms)
+Completed in 64ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:07:54) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:07:54', '2010-09-13 18:07:54', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.0ms)
+Completed in 68ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:08:04) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 19ms (View: 4, DB: 1) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:14:37) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:14:39) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:14:39', '2010-09-13 18:14:39', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.0ms)
+Completed in 74ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:14:57) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:14:57', '2010-09-13 18:14:57', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.2ms)
+Completed in 80ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:14:59) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:14:59', '2010-09-13 18:14:59', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 61ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:16:17) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:16:18) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:16:18', '2010-09-13 18:16:18', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.0ms)
+Completed in 99ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:16:32) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 15ms (View: 5, DB: 1) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:16:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:23:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-13 15:23:45) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (1.9ms)
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-09-13 15:23:47) [POST]
+  Parameters: {"commit"=>"Create", "post"=>{"author"=>"", "body"=>"", "title"=>""}, "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU="}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (5.3ms)
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 15:23:55) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:23:57) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:24:19) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:24:20) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:24:21) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 67ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:24:23) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:24:23) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:24:24) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:24:24) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:24:24) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:24:24) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:24:24) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:26:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 67ms (View: 9, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-13 15:26:10) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionController::RoutingError (No route matches "/comments/comment" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CommentsController#comment (for 127.0.0.1 at 2010-09-13 15:27:08) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template comments/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:28:03) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 21ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 15:28:05) [GET]
+  [4;36;1mPost Load (3.3ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 12ms (View: 5, DB: 3) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:28:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing CommentsController#comment (for 127.0.0.1 at 2010-09-13 15:28:09) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template comments/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 15:34:24) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:34:26) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:35:03) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 15:35:05) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:35:07) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 62ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing CommentsController#comment (for 127.0.0.1 at 2010-09-13 15:35:09) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template comments/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:36:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:36:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing ApplicationController#comment (for 127.0.0.1 at 2010-09-13 15:36:17) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+NameError (uninitialized constant CommentsController):
+  
+
+Rendered rescues/_trace (29.3ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#comment (for 127.0.0.1 at 2010-09-13 15:36:18) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+NameError (uninitialized constant CommentsController):
+  
+
+Rendered rescues/_trace (80.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#comment (for 127.0.0.1 at 2010-09-13 15:36:18) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+NameError (uninitialized constant CommentsController):
+  
+
+Rendered rescues/_trace (28.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#comment (for 127.0.0.1 at 2010-09-13 15:36:18) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+NameError (uninitialized constant CommentsController):
+  
+
+Rendered rescues/_trace (29.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#comment (for 127.0.0.1 at 2010-09-13 15:36:19) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+NameError (uninitialized constant CommentsController):
+  
+
+Rendered rescues/_trace (89.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#comment (for 127.0.0.1 at 2010-09-13 15:36:19) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+NameError (uninitialized constant CommentsController):
+  
+
+Rendered rescues/_trace (34.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:36:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 17ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:36:46) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:38:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:38:46) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:38:46', '2010-09-13 18:38:46', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.9ms)
+Completed in 121ms (View: 11, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:39:05) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 18ms (View: 5, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:39:07) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:39:08) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:39:08) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:39:09) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:39:09) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:39:09) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:39:09) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:39:30) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:39:42) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (3.6ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 18ms (View: 5, DB: 4) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:39:43) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:39:43', '2010-09-13 18:39:43', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.0ms)
+Completed in 98ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:44:28) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:44:28', '2010-09-13 18:44:28', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.0ms)
+Completed in 107ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:45:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:45:12) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:45:12', '2010-09-13 18:45:12', NULL)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.0ms)
+Completed in 92ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:46:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:46:46) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:46:46', '2010-09-13 18:46:46', 2)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (0.9ms)
+Completed in 98ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:46:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.8ms)
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:46:55) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.5ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:46:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.7ms)
+Completed in 15ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:46:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.6ms)
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 15:46:59) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:47:00) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.5ms)
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 15:47:05) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:47:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.5ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 15:47:08) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('', '2010-09-13 15:47:08', '2010-09-13 18:47:08', 1)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (53.8ms)
+Completed in 149ms (View: 56, DB: 0) | 200 OK [http://localhost/posts/comment]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:47:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.8ms)
+Rendered posts/_comment (0.5ms)
+Completed in 16ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:47:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.5ms)
+Rendered posts/_comment (0.5ms)
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:47:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.5ms)
+Rendered posts/_comment (0.5ms)
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:47:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.6ms)
+Rendered posts/_comment (0.5ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:47:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.7ms)
+Rendered posts/_comment (0.5ms)
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:47:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.6ms)
+Rendered posts/_comment (0.5ms)
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 15:47:12) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:47:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.5ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 15:47:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.7ms)
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-13 15:59:58) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (2.1ms)
+Completed in 63ms (View: 59, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-09-13 16:00:00) [POST]
+  Parameters: {"commit"=>"Create", "post"=>{"author"=>"", "body"=>"", "title"=>""}, "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU="}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (5.7ms)
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-13 16:01:15) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-13 16:01:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_comment (1.5ms)
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 16:01:17) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 16:01:19) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 16:01:19) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 16:01:19) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 16:01:19) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+
+ActionView::MissingTemplate (Missing template posts/comment.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#comment (for 127.0.0.1 at 2010-09-13 16:02:28) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"}, "commit"=>"Post", "authenticity_token"=>"jAJTIsl32M81jhPLs8oh4NzN4Z16BEho1Y1uJFup4gU=", "_"=>""}
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry', '2010-09-13 16:02:28', '2010-09-13 19:02:28', 2)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47posts47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/posts/_comment.html.erb:9)
+Rendered posts/_comment (1.0ms)
+Completed in 98ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/comment]

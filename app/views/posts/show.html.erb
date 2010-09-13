@@ -7,11 +7,11 @@
 <ul>
   <div id="comments">
     <% @comments.each do |comment| %>
-        <%= render :partial=>"comment", :object => comment %>
+        <%#= render @comments %> <%= render :partial=>"comment", :object => comment %>
     <% end %>
   </div>
 </ul>
-
+<%= error_messages_for 'comment' %>
 <% form_remote_tag :url => {:action => :comment} do %>
   <p><label for="comment_comment">Comment</label><br/>
   <%= text_area :comment, :comment %></p>

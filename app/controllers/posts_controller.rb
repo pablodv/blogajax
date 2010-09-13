@@ -20,15 +20,17 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    session[:post_id] = params[:id]
     @comments = @post.comments.collect 
   end
 
-  def comment
-    @comment = Comment.new(
-      :post_id => flash[:post_id],
+ def comment
+      @comment = Comment.new(
+      :post_id => session[:post_id],
       :created_at => Time.now,
       :comment  => params[:comment][:comment]
     )
+
     if @comment.save
       flash[:notice] = 'Comment was successfully added.'
       #redirect_to :action=> 'show', :id => flash[:post_id]
@@ -36,7 +38,7 @@ class PostsController < ApplicationController
         page.insert_html :bottom, 'comments', :partial => 'comment'
         page[:comment_comment].clear
         #page["comment_#commentsp"].visual_effect :highlight, :duration => 3.5
-        #flash.keep(:post_id)
+        flash.keep(:post_id)
       end
     end
   end
