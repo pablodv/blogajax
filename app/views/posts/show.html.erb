@@ -6,16 +6,17 @@
 
 <ul>
   <div id="comments">
-    <% @comments.each do |comment| %>
-        <%#= render @comments %> <%= render :partial=>"comment", :object => comment %>
-    <% end %>
+    <%# @comments.each do |comment| %>
+        <%= render @comments %> <%#= render :partial=>"comment", :object => comment %>
+    <%# end %>
   </div>
 </ul>
 <%= error_messages_for 'comment' %>
-<% form_remote_tag :url => {:action => :comment} do %>
-  <p><label for="comment_comment">Comment</label><br/>
-  <%= text_area :comment, :comment %></p>
-  <%= submit_tag "Post" %>
+<% form_remote_for :comment, @comment, :url => post_comments_path(@post, @comment) do |f|%>
+  <p>
+  <%= f.label 'Comment' %><br/>
+  <%= f.text_area :comment %></p>
+  <%= f.submit "Post" %>
 <% end %>
 
 
