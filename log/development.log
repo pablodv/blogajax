@@ -6908,3 +6908,16 @@ Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:50:23) [GET]
 Rendering template within layouts/application
 Rendering posts/index
 Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 12:02:20) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"posts"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.6ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/posts/1]
