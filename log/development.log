@@ -9734,3 +9734,54 @@ Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 15:55:16) [GE
 Rendering template within layouts/application
 Rendering user_sessions/new
 Completed in 15ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 16:23:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 83ms (View: 78, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 16:30:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 18ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-14 16:30:46) [GET]
+
+ActionController::RoutingError (No route matches "/password_resets/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 16:31:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 17ms (View: 6, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PasswordResetsController#new (for 127.0.0.1 at 2010-09-14 16:31:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"password_resets"}
+Rendering template within layouts/application
+Rendering password_resets/new
+Completed in 19ms (View: 7, DB: 0) | 200 OK [http://localhost/password_resets/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 16:31:43) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 17ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PasswordResetsController#new (for 127.0.0.1 at 2010-09-14 16:31:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"password_resets"}
+Rendering template within layouts/application
+Rendering password_resets/new
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/password_resets/new]
