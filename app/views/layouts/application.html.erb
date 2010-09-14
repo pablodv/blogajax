@@ -16,6 +16,12 @@
 
 		<div class="header">
 			<h1><%= link_to 'Ruby on Rails', :controller => 'posts', :action => 'index' %></h1>
+                            <% if current_user %>
+                              <div id="user"> 
+                                  <%=  'Welcome ' + current_user.full_name  %> <br/>
+                                  <%= link_to 'Loguot', logout_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+                              </div>
+                            <% end %>
 		</div>
 
 		<div class="link_menu">
@@ -36,22 +42,19 @@
 	</div>
 
 	<div class="main_right">
-
-		<div class="link_projects">
-
+            
+		<div class="link_projects">                  
 			<div class="lbl">projects</div>
 			<span class="left">
-				<a href="http://holiday.heroku.com/login" class="g1" accesskey="c" ><span>HR</span><br>Holiday Reminder</a>
-                                
+				<a href="http://holiday.heroku.com/login" class="g1" accesskey="c" ><span>HR</span><br>Holiday Reminder</a>                                
 			</span>
 			<span class="right">
 				<a href="index.html" class="g2" accesskey="p"><span>PHP</span><br>Hypertext Preprocessor</a>
 			</span>
-
 		</div>
 
 		<div class="link_updates">
-                        <%#= render :partial => 'user_sessions/new' %>
+                        
 			<div class="lbl">update </div>
 			<a href="index.html"><span>PHP</span>laoreet<br>-<br>2006-12-19</a>
 			<a href="index.html"><span>PHP</span>neque convallis<br>-<br>2006-12-15</a>
