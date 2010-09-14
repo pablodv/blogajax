@@ -19,10 +19,11 @@
 		</div>
 
 		<div class="link_menu">
-			<%= link_to 'Home', :controller => 'posts', :action => 'index' %>
+			<%= link_to 'Home',  :controller => 'posts', :action => 'index' %>
+                        <%= link_to 'Login', login_path %>
+                        <%= link_to 'Registrer',  signup_path %>
                         <%= link_to 'Add Post', :controller => 'posts', :action => 'new'  %>
-			<a href="index.html" accesskey="3">Elemen</a>
-			<a href="index.html" accesskey="4">Maecenas</a>
+			
 		</div>
 
 		<div class="content">
@@ -50,8 +51,8 @@
 		</div>
 
 		<div class="link_updates">
-
-			<div class="lbl">updates</div>
+                        <%#= render :partial => 'user_sessions/new' %>
+			<div class="lbl">update </div>
 			<a href="index.html"><span>PHP</span>laoreet<br>-<br>2006-12-19</a>
 			<a href="index.html"><span>PHP</span>neque convallis<br>-<br>2006-12-15</a>
 			<a href="index.html"><span>CSS</span>pellentesque<br>-<br>2006-12-13</a>

@@ -4830,3 +4830,2081 @@ ActionView::MissingTemplate (Missing template comments/create.erb in view path a
   
 
 Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-14 09:25:13) [GET]
+
+ActionController::RoutingError (No route matches "/articles" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-14 09:25:18) [GET]
+
+ActionController::RoutingError (No route matches "/pots" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 09:25:30) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 113ms (View: 80, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 09:25:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (7.6ms)
+Rendered comments/_comment (1.9ms)
+Rendered comments/_comment (1.2ms)
+Rendered comments/_comment (1.1ms)
+Rendered comments/_comment (1.3ms)
+Rendered comments/_comment (1.2ms)
+Rendered comments/_comment (1.0ms)
+Rendered comments/_comment (0.5ms)
+Completed in 62ms (View: 48, DB: 1) | 200 OK [http://localhost/posts/2]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 09:25:46) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"}, "commit"=>"Post", "post_id"=>"2", "authenticity_token"=>"gC4gZu+/tzccXIpvPOqtruFd2A98uAbllsQzyI7qu8Q=", "_"=>""}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry', '2010-09-14 12:25:46', '2010-09-14 12:25:46', 2)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47comments47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/comments/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47comments47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/comments/_comment.html.erb:9)
+Rendered comments/_comment (1.8ms)
+Completed in 99ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/2/comments]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 09:27:25) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 58ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 09:27:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.9ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 09:28:24) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."}, "commit"=>"Post", "post_id"=>"1", "authenticity_token"=>"gC4gZu+/tzccXIpvPOqtruFd2A98uAbllsQzyI7qu8Q=", "_"=>""}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '2010-09-14 12:28:24', '2010-09-14 12:28:24', 1)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47comments47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/comments/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47comments47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/comments/_comment.html.erb:9)
+Rendered comments/_comment (1.1ms)
+Completed in 122ms (View: 3, DB: 0) | 200 OK [http://localhost/posts/1/comments]
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100913141458)
+Migrating to CreateComments (20100913141627)
+Migrating to AddAuthorPost (20100913142339)
+Migrating to CreateNotifiers (20100914125209)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "notifiers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100914125209')[0m
+Migrating to CreateUsers (20100914125216)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100914125216')[0m
+Migrating to CreateUserSessions (20100914125225)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "user_sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100914125225')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("notifiers")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("user_sessions")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 10:08:04) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"posts"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:08:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+
+ActiveRecord::RecordNotFound (Couldn't find UserSession without an ID):
+  app/controllers/application_controller.rb:12:in `current_user_session'
+  app/controllers/application_controller.rb:17:in `current_user'
+  app/controllers/application_controller.rb:30:in `require_no_user'
+
+Rendered rescues/_trace (90.5ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:12:45) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+
+ActiveRecord::RecordNotFound (Couldn't find UserSession without an ID):
+  app/controllers/application_controller.rb:12:in `current_user_session'
+  app/controllers/application_controller.rb:17:in `current_user'
+  app/controllers/application_controller.rb:30:in `require_no_user'
+
+Rendered rescues/_trace (37.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 10:12:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 10:12:55) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.6ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.7ms)
+Rendered comments/_comment (0.6ms)
+Rendered comments/_comment (0.6ms)
+Rendered comments/_comment (0.7ms)
+Rendered comments/_comment (0.7ms)
+Rendered comments/_comment (0.6ms)
+Rendered comments/_comment (0.7ms)
+Rendered comments/_comment (0.6ms)
+Rendered comments/_comment (0.7ms)
+Completed in 24ms (View: 15, DB: 1) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 10:13:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-14 10:13:02) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (7.2ms)
+Completed in 31ms (View: 26, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 10:13:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-14 10:13:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+
+ActiveRecord::RecordNotFound (Couldn't find UserSession without an ID):
+  app/controllers/application_controller.rb:12:in `current_user_session'
+  app/controllers/application_controller.rb:17:in `current_user'
+  app/controllers/application_controller.rb:21:in `require_user'
+
+Rendered rescues/_trace (94.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-14 10:14:56) [GET]
+
+ActionController::RoutingError (No route matches "/singup" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-14 10:15:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+
+ActiveRecord::RecordNotFound (Couldn't find UserSession without an ID):
+  app/controllers/application_controller.rb:12:in `current_user_session'
+  app/controllers/application_controller.rb:17:in `current_user'
+  app/controllers/application_controller.rb:30:in `require_no_user'
+
+Rendered rescues/_trace (36.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:20:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+
+NameError (uninitialized constant Authlogic):
+  app/models/user_session.rb:1
+  app/controllers/application_controller.rb:12:in `current_user_session'
+  app/controllers/application_controller.rb:17:in `current_user'
+  app/controllers/application_controller.rb:30:in `require_no_user'
+
+Rendered rescues/_trace (102.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2010-09-14 10:24:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+
+NameError (uninitialized constant UserSessionsController):
+  
+
+Rendered rescues/_trace (29.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:25:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+
+ActionController::UnknownAction (No action responded to new. Actions: ):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:26:34) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+
+NameError (uninitialized constant Authlogic):
+  app/models/user_session.rb:1
+  app/controllers/application_controller.rb:12:in `current_user_session'
+  app/controllers/application_controller.rb:17:in `current_user'
+  app/controllers/application_controller.rb:30:in `require_no_user'
+
+Rendered rescues/_trace (101.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:28:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined local variable or method `user_session_path' for #<ActionView::Base:0xb6ebd94c>) on line #3 of app/views/user_sessions/new.html.erb:
+1: <h1>Login</h1>
+2: <br />
+3: <% form_for @user_session, :url => user_session_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= f.label :login %><br />
+6:   <%= f.text_field :login %><br />
+
+    app/views/user_sessions/new.html.erb:3
+
+Rendered rescues/_trace (93.3ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:30:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #6 of app/views/user_sessions/new.html.erb:
+3: <% form_for @user_session, :url => user_session_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= f.label :login %><br />
+6:   <%= f.text_field :login %><br />
+7:   <br />
+8:   <%= f.label :password %><br />
+9:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:6
+    app/views/user_sessions/new.html.erb:3
+
+Rendered rescues/_trace (104.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100913141458)
+Migrating to CreateComments (20100913141627)
+Migrating to AddAuthorPost (20100913142339)
+Migrating to CreateNotifiers (20100914125209)
+Migrating to CreateUsers (20100914125216)
+Migrating to CreateUserSessions (20100914125225)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("notifiers")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("user_sessions")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100913141458)
+Migrating to CreateComments (20100913141627)
+Migrating to AddAuthorPost (20100913142339)
+Migrating to CreateNotifiers (20100914125209)
+Migrating to CreateUserSessions (20100914125225)
+Migrating to CreateUser (20100914133546)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: table "users" already exists: CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "full_name" varchar(255), "login" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "current_login_at" datetime, "last_login_at" datetime, "current_login_ip" varchar(255), "last_login_ip" varchar(255), "active" boolean DEFAULT 'f', "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100913141458)
+Migrating to CreateComments (20100913141627)
+Migrating to AddAuthorPost (20100913142339)
+Migrating to CreateNotifiers (20100914125209)
+Migrating to CreateUserSessions (20100914125225)
+Migrating to CreateUser (20100914133546)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "full_name" varchar(255)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSQLite3::SQLException: Cannot add a NOT NULL column with default value NULL: ALTER TABLE "users" ADD "login" varchar(255) NOT NULL[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100913141458)
+Migrating to CreateComments (20100913141627)
+Migrating to AddAuthorPost (20100913142339)
+Migrating to CreateNotifiers (20100914125209)
+Migrating to CreateUserSessions (20100914125225)
+Migrating to CreateUser (20100914133546)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "full_name" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mALTER TABLE "users" ADD "login" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mALTER TABLE "users" ADD "email" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mALTER TABLE "users" ADD "crypted_password" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mALTER TABLE "users" ADD "password_salt" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mALTER TABLE "users" ADD "persistence_token" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mALTER TABLE "users" ADD "single_access_token" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mALTER TABLE "users" ADD "perishable_token" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mALTER TABLE "users" ADD "login_count" integer DEFAULT 0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "failed_login_count" integer DEFAULT 0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mALTER TABLE "users" ADD "last_request_at" datetime[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "current_login_at" datetime[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "last_login_at" datetime[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "current_login_ip" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "last_login_ip" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "active" boolean DEFAULT 'f'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_info('index_users_on_perishable_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100914133546')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("notifiers")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("user_sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_info('index_users_on_perishable_token')[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:47:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 21ms (View: 13, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-14 10:47:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined local variable or method `account_path' for #<ActionView::Base:0xb6d48ef4>) on line #4 of app/views/users/new.html.erb:
+1: <h1>Register</h1>
+2: <br/>
+3: 
+4: <% form_for @user, :url => account_path do |f| %>
+5:   <%= f.error_messages %>
+6:   <%= render :partial => "form", :object => f %>
+7:   <%= f.submit "Register" %>
+
+    app/views/users/new.html.erb:4
+
+Rendered rescues/_trace (42.3ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-14 10:47:14) [GET]
+
+ActionController::RoutingError (No route matches "/password_resets/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-14 10:47:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/posts/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:47:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 10:47:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 73ms (View: 10, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 10:48:04) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (2.2ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Completed in 25ms (View: 16, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 10:48:36) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.6ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 10:48:43) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."}, "commit"=>"Post", "action"=>"create", "post_id"=>"1", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/posts/1/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:48:43) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 10:48:44) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."}, "commit"=>"Post", "action"=>"create", "post_id"=>"1", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/posts/1/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:48:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 10:48:44) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."}, "commit"=>"Post", "action"=>"create", "post_id"=>"1", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/posts/1/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:48:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 10:48:44) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."}, "commit"=>"Post", "action"=>"create", "post_id"=>"1", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/posts/1/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:48:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 10:48:45) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."}, "commit"=>"Post", "action"=>"create", "post_id"=>"1", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/posts/1/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:48:45) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 10:48:45) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."}, "commit"=>"Post", "action"=>"create", "post_id"=>"1", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/posts/1/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:48:45) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 10:48:45) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."}, "commit"=>"Post", "action"=>"create", "post_id"=>"1", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/posts/1/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:48:45) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 10:48:46) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."}, "commit"=>"Post", "action"=>"create", "post_id"=>"1", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/posts/1/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:48:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 10:48:47) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."}, "commit"=>"Post", "action"=>"create", "post_id"=>"1", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/posts/1/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:48:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 10:48:48) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."}, "commit"=>"Post", "action"=>"create", "post_id"=>"1", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/posts/1/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:48:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 10:48:48) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."}, "commit"=>"Post", "action"=>"create", "post_id"=>"1", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/posts/1/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:48:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 10:48:48) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry."}, "commit"=>"Post", "action"=>"create", "post_id"=>"1", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/posts/1/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:48:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 10:51:08) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.6ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+
+ActionView::TemplateError (Missing template posts/_.erb in view path app/views) on line #54 of app/views/layouts/application.html.erb:
+51: 
+52: 		<div class="link_updates">
+53: 
+54: 			<div class="lbl"><%= render :partial => '' %></div>
+55: 			<a href="index.html"><span>PHP</span>laoreet<br>-<br>2006-12-19</a>
+56: 			<a href="index.html"><span>PHP</span>neque convallis<br>-<br>2006-12-15</a>
+57: 			<a href="index.html"><span>CSS</span>pellentesque<br>-<br>2006-12-13</a>
+
+    app/views/layouts/application.html.erb:54
+
+Rendered rescues/_trace (43.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 10:52:49) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.6ms)
+Rendered comments/_comment (0.6ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/user_sessions/_new.html.erb:
+1: <h1>Login</h1>
+2: <br />
+3: <% form_for @user_session, :url => user_session_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= f.label :login %><br />
+6:   <%= f.text_field :login %><br />
+
+    app/views/user_sessions/_new.html.erb:3
+    app/views/layouts/application.html.erb:54
+
+Rendered rescues/_trace (51.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-14 10:55:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined local variable or method `account_path' for #<ActionView::Base:0xb6d69398>) on line #4 of app/views/users/new.html.erb:
+1: <h1>Register</h1>
+2: <br/>
+3: 
+4: <% form_for @user, :url => account_path do |f| %>
+5:   <%= f.error_messages %>
+6:   <%= render :partial => "form", :object => f %>
+7:   <%= f.submit "Register" %>
+
+    app/views/users/new.html.erb:4
+
+Rendered rescues/_trace (103.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:55:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined local variable or method `singup_path' for #<ActionView::Base:0xb6e6b084>) on line #23 of app/views/layouts/application.html.erb:
+20: 
+21: 		<div class="link_menu">
+22: 			<%= link_to 'Home',  :controller => 'posts', :action => 'index' %>
+23:                         <%= link_to 'Login', singup_path %>
+24:                         <%= link_to 'Add Post', :controller => 'posts', :action => 'new'  %>
+25: 			<a href="index.html" accesskey="3">Elemen</a>
+26: 			<a href="index.html" accesskey="4">Maecenas</a>
+
+    app/views/layouts/application.html.erb:23
+
+Rendered rescues/_trace (41.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-14 10:55:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 58ms (DB: 0) | 302 Found [http://localhost/posts/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:55:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined local variable or method `singup_path' for #<ActionView::Base:0xb6f35bcc>) on line #23 of app/views/layouts/application.html.erb:
+20: 
+21: 		<div class="link_menu">
+22: 			<%= link_to 'Home',  :controller => 'posts', :action => 'index' %>
+23:                         <%= link_to 'Login', singup_path %>
+24:                         <%= link_to 'Add Post', :controller => 'posts', :action => 'new'  %>
+25: 			<a href="index.html" accesskey="3">Elemen</a>
+26: 			<a href="index.html" accesskey="4">Maecenas</a>
+
+    app/views/layouts/application.html.erb:23
+
+Rendered rescues/_trace (41.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:56:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:56:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 10:56:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:56:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-14 10:56:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/posts/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:56:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 16ms (View: 6, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:56:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 10:56:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 64ms (View: 9, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-14 10:56:53) [GET]
+
+ActionController::RoutingError (No route matches "/password_resets/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:04:20) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_new (3.4ms)
+Completed in 24ms (View: 16, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:04:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/user_sessions/_new.html.erb:
+1: <h1>Login</h1>
+2: <br />
+3: <% form_for @user_session, :url => user_session_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= f.label :login %><br />
+6:   <%= f.text_field :login %><br />
+
+    app/views/user_sessions/_new.html.erb:3
+    app/views/layouts/application.html.erb:55
+
+Rendered rescues/_trace (107.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:06:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/user_sessions/_new.html.erb:
+1: <h1>Login</h1>
+2: <br />
+3: <% form_for @user_session, :url => user_session_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= f.label :login %><br />
+6:   <%= f.text_field :login %><br />
+
+    app/views/user_sessions/_new.html.erb:3
+    app/views/layouts/application.html.erb:55
+
+Rendered rescues/_trace (51.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-14 11:06:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/posts/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:06:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_new (2.8ms)
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:06:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_new (2.7ms)
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:06:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/user_sessions/_new.html.erb:
+1: <h1>Login</h1>
+2: <br />
+3: <% form_for @user_session, :url => user_session_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= f.label :login %><br />
+6:   <%= f.text_field :login %><br />
+
+    app/views/user_sessions/_new.html.erb:3
+    app/views/layouts/application.html.erb:55
+
+Rendered rescues/_trace (109.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:07:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_new (3.6ms)
+Completed in 19ms (View: 12, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-14 11:07:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined local variable or method `account_path' for #<ActionView::Base:0xb6e0d04c>) on line #4 of app/views/users/new.html.erb:
+1: <h1>Register</h1>
+2: <br/>
+3: 
+4: <% form_for @user, :url => account_path do |f| %>
+5:   <%= f.error_messages %>
+6:   <%= render :partial => "form", :object => f %>
+7:   <%= f.submit "Register" %>
+
+    app/views/users/new.html.erb:4
+
+Rendered rescues/_trace (95.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:08:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_new (3.6ms)
+Completed in 25ms (View: 17, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:08:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/user_sessions/_new.html.erb:
+1: <h1>Login</h1>
+2: <br />
+3: <% form_for @user_session, :url => user_session_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= f.label :login %><br />
+6:   <%= f.text_field :login %><br />
+
+    app/views/user_sessions/_new.html.erb:3
+    app/views/layouts/application.html.erb:54
+
+Rendered rescues/_trace (107.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:08:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/user_sessions/_new.html.erb:
+1: <h1>Login</h1>
+2: <br />
+3: <% form_for @user_session, :url => user_session_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= f.label :login %><br />
+6:   <%= f.text_field :login %><br />
+
+    app/views/user_sessions/_new.html.erb:3
+    app/views/layouts/application.html.erb:54
+
+Rendered rescues/_trace (52.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:08:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_new (2.6ms)
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:08:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_new (2.9ms)
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:09:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_new (2.7ms)
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:09:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:10:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 63ms (View: 6, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-14 11:10:56) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `password' for #<User:0xb6f3efec>) on line #5 of app/views/users/_form.erb:
+2: <%= form.text_field :login %><br />
+3: <br />
+4: <%= form.label :password, form.object.new_record? ? nil : "Change password" %><br />
+5: <%= form.password_field :password %><br />
+6: <br />
+7: <%= form.label :password_confirmation %><br />
+8: <%= form.password_field :password_confirmation %><br />
+
+    app/views/users/_form.erb:5
+    app/views/users/new.html.erb:6
+    app/views/users/new.html.erb:4
+
+Rendered rescues/_trace (55.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100913141458)
+Migrating to CreateComments (20100913141627)
+Migrating to AddAuthorPost (20100913142339)
+Migrating to CreateNotifiers (20100914125209)
+Migrating to CreateUserSessions (20100914125225)
+Migrating to CreateUser (20100914133546)
+Migrating to PasswordByUser (20100914141313)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "password" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100914141313')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("notifiers")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("user_sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_info('index_users_on_perishable_token')[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-14 11:14:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `password_confirmation' for #<User:0xb6f9cd2c>) on line #8 of app/views/users/_form.erb:
+5: <%= form.password_field :password %><br />
+6: <br />
+7: <%= form.label :password_confirmation %><br />
+8: <%= form.password_field :password_confirmation %><br />
+9: <br />
+10: <%= form.label :email %><br />
+11: <%= form.text_field :email %><br />
+
+    app/views/users/_form.erb:8
+    app/views/users/new.html.erb:6
+    app/views/users/new.html.erb:4
+
+Rendered rescues/_trace (56.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-14 11:15:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (uninitialized constant User::COUNTRIES) on line #14 of app/views/users/_form.erb:
+11: <%= form.text_field :email %><br />
+12: <br/>
+13: <%= form.label :country %><br />
+14: <%= form.select :country, User::COUNTRIES, :prompt  => "Select a country" %><br />
+15: <br/>
+16: <%= form.label :state %><br />
+17: <%= form.text_field :state %><br />
+
+    app/views/users/_form.erb:14
+    app/views/users/new.html.erb:6
+    app/views/users/new.html.erb:4
+
+Rendered rescues/_trace (116.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-14 11:16:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.9ms)
+Completed in 22ms (View: 11, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-14 11:17:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.5ms)
+Completed in 22ms (View: 12, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-14 11:17:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.4ms)
+Completed in 23ms (View: 12, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:18:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 16ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:19:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 9, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-14 11:19:27) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/account]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:19:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 15ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-14 11:19:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.4ms)
+Completed in 18ms (View: 8, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-14 11:20:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.6ms)
+Completed in 21ms (View: 12, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-14 11:20:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.8ms)
+Completed in 72ms (View: 9, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:20:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 16ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-14 11:20:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.3ms)
+Completed in 18ms (View: 8, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-14 11:20:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/posts/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:20:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:20:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 60ms (View: 5, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 11:20:19) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"posts"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.7ms)
+Rendered comments/_comment (0.6ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://localhost/posts/2]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 11:20:21) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "action"=>"create", "post_id"=>"2", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/posts/2/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:20:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 15ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 11:20:22) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "action"=>"create", "post_id"=>"2", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/posts/2/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:20:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 65ms (View: 16, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 11:20:26) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"}, "commit"=>"Post", "action"=>"create", "post_id"=>"2", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/posts/2/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:20:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 15ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 11:20:26) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"}, "commit"=>"Post", "action"=>"create", "post_id"=>"2", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/posts/2/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:20:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 15ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 11:20:26) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"}, "commit"=>"Post", "action"=>"create", "post_id"=>"2", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/posts/2/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:20:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 17ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 11:20:26) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"}, "commit"=>"Post", "action"=>"create", "post_id"=>"2", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/posts/2/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:20:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 16ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 11:20:27) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"}, "commit"=>"Post", "action"=>"create", "post_id"=>"2", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/posts/2/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:20:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:20:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:20:42) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 16ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-14 11:20:43) [GET]
+
+ActionController::RoutingError (No route matches "/password_resets/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:20:55) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 15ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-14 11:20:56) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.4ms)
+Completed in 18ms (View: 8, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-14 11:21:23) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "full_name"=>"Pablo Moreira Mora", "password"=>"[FILTERED]", "login"=>"pablo", "email"=>"pablo@pablo.com"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'pablo@pablo.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'pablo') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '946f0c593a7550e2c89182f4dffa5c0c7675e37220002b21e60b26bfe722fc9b516f519ed89954c0fe554f7cb9afa97c08e75ec5f4a72ebbbc132ff4f323f8d7') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'GXIg9JHxvJVPuaOZMBFI') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("created_at", "single_access_token", "last_request_at", "crypted_password", "updated_at", "perishable_token", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "full_name", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "password", "email", "active") VALUES('2010-09-14 14:21:24', 'GXIg9JHxvJVPuaOZMBFI', NULL, '6acff7ac57715ded8f5331d663ea90073e0061abaad1c350490d82b43f548ee82232b44c5741cddb20a4046983aa9c96be55ecacf1618715e776e027093d13f5', '2010-09-14 14:21:24', 'KbXlbsJnQZ83kRTIvyn', 0, NULL, 'cCr0npb6oPs1FIUxsz', NULL, 'Pablo Moreira Mora', '946f0c593a7550e2c89182f4dffa5c0c7675e37220002b21e60b26bfe722fc9b516f519ed89954c0fe554f7cb9afa97c08e75ec5f4a72ebbbc132ff4f323f8d7', 0, NULL, 'pablo', NULL, NULL, 'pablo@pablo.com', 'f')[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:21:24', "perishable_token" = 'LdZDe7i1FJNKwYmKkEy' WHERE "id" = 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `deliver_activation_instructions' for Notifier(id: integer, created_at: datetime, updated_at: datetime):Class):
+  app/models/user.rb:40:in `deliver_activation_instructions!'
+  app/controllers/users_controller.rb:14:in `create'
+
+Rendered rescues/_trace (36.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-14 11:23:10) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "full_name"=>"Pablo Moreira Mora", "password"=>"[FILTERED]", "login"=>"pablo", "email"=>"pablo@pablo.com"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'pablo@pablo.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'pablo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '999891e348b8ef58b8988b91d18df5ecd115a7ccee630d6eebb6649281136d19fb46584e9a3b215f0243c57ed03994c83ba87c13a31cf0b60766cfb8ccb17177') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'M5l5qyYirahVS6ctuh') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (4.8ms)
+Completed in 30ms (View: 11, DB: 0) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-14 11:23:32) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "full_name"=>"Pablo Moreira Mora", "password"=>"[FILTERED]", "login"=>"pablo2", "email"=>"pablo@pablo.com.ar"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'pablo@pablo.com.ar') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'pablo2') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'cdd259b31af2ff8cbc5b9f16e470726bc9725c70d9c4611fb9eeac5f15adb061a84022d0909670f53199877165a94d4d6e1522c80a82659586a27521934fbedf') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'IcRihCsLVqNznWQwNWbI') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("created_at", "single_access_token", "last_request_at", "crypted_password", "updated_at", "perishable_token", "failed_login_count", "current_login_ip", "password_salt", "current_login_at", "full_name", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at", "password", "email", "active") VALUES('2010-09-14 14:23:32', 'IcRihCsLVqNznWQwNWbI', NULL, 'd008fc872025c4d082ae535f66f55b1e5c370e906d53289403a935606073f9f2e323c673a172be06d5f9cdbcf2bbe8d8ae1584e9dfee8e23a3164af3c80ddd12', '2010-09-14 14:23:32', 'xmhd5fNOsOJKhxJ9tZs', 0, NULL, 'Aeq4IOQNUeDP21e3dIS', NULL, 'Pablo Moreira Mora', 'cdd259b31af2ff8cbc5b9f16e470726bc9725c70d9c4611fb9eeac5f15adb061a84022d0909670f53199877165a94d4d6e1522c80a82659586a27521934fbedf', 0, NULL, 'pablo2', NULL, NULL, 'pablo@pablo.com.ar', 'f')[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-14 14:23:32', "perishable_token" = 'IC99Y4pfw2dYFu8Qg6w' WHERE "id" = 2[0m
+Sent mail to pablo@pablo.com.ar
+
+Date: Tue, 14 Sep 2010 11:23:32 -0300
+From: Holiday Reminder <noreply@holidayreminder.com>
+To: pablo@pablo.com.ar
+Subject: Activation Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+ Thank you for creating an account! Click the url below to activate your account!
+
+  http://localhost/register/IC99Y4pfw2dYFu8Qg6w
+Redirected to http://localhost:3000/posts/2/comments
+Completed in 235ms (DB: 1) | 302 Found [http://localhost/account]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2010-09-14 11:23:32) [GET]
+  Parameters: {"action"=>"index", "post_id"=>"2", "controller"=>"comments"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ActivationsController#new (for 127.0.0.1 at 2010-09-14 11:28:55) [GET]
+  Parameters: {"action"=>"new", "activation_code"=>"IC99Y4pfw2dYFu8Qg6w", "controller"=>"activations"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (perishable_token = 'IC99Y4pfw2dYFu8Qg6w' and updated_at > '2010-09-07 14:28:55') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering activations/new
+Completed in 51ms (View: 19, DB: 1) | 200 OK [http://localhost/register/IC99Y4pfw2dYFu8Qg6w]
+
+
+Processing ActivationsController#create (for 127.0.0.1 at 2010-09-14 11:29:00) [POST]
+  Parameters: {"commit"=>"Activate", "action"=>"create", "id"=>"2", "controller"=>"activations"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:29:00', "perishable_token" = 'Rs7MKTOSWVClh3OFunB7', "active" = 't' WHERE "id" = 2[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-14 14:29:00', "perishable_token" = 'KkOswvwR3jdEQQBX6zaR' WHERE "id" = 2[0m
+Sent mail to pablo@pablo.com.ar
+
+Date: Tue, 14 Sep 2010 11:29:00 -0300
+From: Holiday Reminder <noreply@holidayreminder.com>
+To: pablo@pablo.com.ar
+Subject: Activation Complete
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been activated.
+
+  http://localhost/login
+
+  If the above URL does not work try copying and pasting it into your browser.
+  If you continue to have problem, please feel free to contact us.
+Redirected to http://localhost:3000/account
+Completed in 288ms (DB: 1) | 302 Found [http://localhost/activate/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-14 11:29:00) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/account]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:29:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 20ms (View: 10, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-09-14 11:29:12) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"pablo2"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'pablo2') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "login_count" = 1, "current_login_ip" = '127.0.0.1', "updated_at" = '2010-09-14 14:29:12', "perishable_token" = 'f2EtcX0KmbbvVEmZar', "last_request_at" = '2010-09-14 14:29:12', "current_login_at" = '2010-09-14 14:29:12' WHERE "id" = 2[0m
+
+ActionController::RoutingError (post_url failed to generate from {:controller=>"posts", :action=>"show"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["posts", :id] - are they all satisfied?):
+  (eval):17:in `post_path'
+  app/controllers/user_sessions_controller.rb:14:in `create'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-09-14 11:30:51) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"pablo2"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-14 14:30:51', "perishable_token" = '6hS3EkXY1rG5jx8OrSt', "last_request_at" = '2010-09-14 14:30:51' WHERE "id" = 2[0m
+
+NameError (undefined local variable or method `admin_clients_path' for #<UserSessionsController:0xb6d90358>):
+  app/controllers/application_controller.rb:33:in `require_no_user'
+
+Rendered rescues/_trace (96.6ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:31:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 11:31:43) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (2.3ms)
+Rendered comments/_comment (0.6ms)
+Rendered comments/_comment (0.6ms)
+Rendered comments/_comment (0.7ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Completed in 76ms (View: 67, DB: 1) | 200 OK [http://localhost/posts/2]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:31:45) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:31:45', "perishable_token" = 'pSrD1yEzIWXXmEvqSQ', "last_request_at" = '2010-09-14 14:31:45' WHERE "id" = 2[0m
+
+NameError (undefined local variable or method `admin_clients_path' for #<UserSessionsController:0xb6ee33a4>):
+  app/controllers/application_controller.rb:33:in `require_no_user'
+
+Rendered rescues/_trace (39.0ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:32:43) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:32:43', "perishable_token" = 'PwLjUIWn6gizSrZNk861', "last_request_at" = '2010-09-14 14:32:43' WHERE "id" = 2[0m
+
+ActionController::RoutingError (post_url failed to generate from {:controller=>"posts", :action=>"show"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["posts", :id] - are they all satisfied?):
+  (eval):17:in `post_path'
+  app/controllers/application_controller.rb:33:in `require_no_user'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:32:56) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:32:56', "perishable_token" = 'aik3m06Ov2O95ga2g3', "last_request_at" = '2010-09-14 14:32:56' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/posts
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 98ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:32:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-14 11:33:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-14 14:33:28', "perishable_token" = 'l44YKUb52OTdcSuIkIsm', "last_request_at" = '2010-09-14 14:33:28' WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (1.8ms)
+Completed in 111ms (View: 13, DB: 1) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:33:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 11:33:33) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.7ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.7ms)
+Rendered comments/_comment (0.6ms)
+Completed in 72ms (View: 14, DB: 1) | 200 OK [http://localhost/posts/2]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 11:33:40) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"}, "commit"=>"Post", "action"=>"create", "post_id"=>"2", "controller"=>"comments", "_"=>""}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:33:40', "perishable_token" = 'ohUeEQAzqwlFQF1r20p', "last_request_at" = '2010-09-14 14:33:40' WHERE "id" = 2[0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("comment", "created_at", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry', '2010-09-14 14:33:40', '2010-09-14 14:33:40', 2)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47comments47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/comments/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47comments47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/comments/_comment.html.erb:9)
+Rendered comments/_comment (1.7ms)
+Completed in 194ms (View: 4, DB: 1) | 200 OK [http://localhost/posts/2/comments]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-14 11:33:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:33:59', "perishable_token" = 'we1Tuiq2AhlJsVqHlsBy', "last_request_at" = '2010-09-14 14:33:59' WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (1.3ms)
+Completed in 112ms (View: 5, DB: 1) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-14 11:37:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:37:16', "perishable_token" = 'RdSbcsX7NcFMH9SCIp3t', "last_request_at" = '2010-09-14 14:37:16' WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (3.4ms)
+Completed in 137ms (View: 13, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-09-14 11:38:01) [POST]
+  Parameters: {"commit"=>"Create", "post"=>{"body"=>"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.", "title"=>"post de prueba"}, "action"=>"create", "controller"=>"posts"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:38:01', "perishable_token" = 'gReG8TGGCOGIUNUpz20D', "last_request_at" = '2010-09-14 14:38:01' WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.4ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "body", "author", "updated_at") VALUES('2010-09-14 14:38:01', 'post de prueba', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don''t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn''t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'Pablo Moreira Mora', '2010-09-14 14:38:01')[0m
+Redirected to http://localhost:3000/posts
+Completed in 173ms (DB: 1) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:38:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.8ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 11:38:37) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.6ms)
+Rendered comments/_comment (0.6ms)
+Rendered comments/_comment (0.6ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://localhost/posts/2]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100913141458)
+Migrating to CreateComments (20100913141627)
+Migrating to AddAuthorPost (20100913142339)
+Migrating to CreateNotifiers (20100914125209)
+Migrating to CreateUserSessions (20100914125225)
+Migrating to CreateUser (20100914133546)
+Migrating to PasswordByUser (20100914141313)
+Migrating to AuthorByComment (20100914143933)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "comments" ADD "author" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100914143933')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("notifiers")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("user_sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_info('index_users_on_perishable_token')[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 11:45:42) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.6ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 11:46:54) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.5ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:46:54', "perishable_token" = 'WjJABqdJ96ziVlQCclXQ', "last_request_at" = '2010-09-14 14:46:54' WHERE "id" = 2[0m
+Rendered comments/_comment (125.8ms)
+Rendered comments/_comment (1.3ms)
+Rendered comments/_comment (1.2ms)
+Rendered comments/_comment (1.6ms)
+Rendered comments/_comment (1.5ms)
+Rendered comments/_comment (1.1ms)
+Rendered comments/_comment (0.7ms)
+Rendered comments/_comment (0.7ms)
+Rendered comments/_comment (0.7ms)
+Rendered comments/_comment (0.5ms)
+Completed in 154ms (View: 145, DB: 1) | 200 OK [http://localhost/posts/2]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 11:47:03) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"}, "commit"=>"Post", "action"=>"create", "post_id"=>"2", "controller"=>"comments", "_"=>""}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:47:03', "perishable_token" = '6D4fjAgNoxhK032uZ4', "last_request_at" = '2010-09-14 14:47:03' WHERE "id" = 2[0m
+
+NoMethodError (undefined method `comments' for nil:NilClass):
+  app/controllers/comments_controller.rb:7:in `create'
+
+Rendered rescues/_trace (91.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 11:47:05) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"}, "commit"=>"Post", "action"=>"create", "post_id"=>"2", "controller"=>"comments", "_"=>""}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:47:05', "perishable_token" = 'pI5b9zQi099qYWWi3x9S', "last_request_at" = '2010-09-14 14:47:05' WHERE "id" = 2[0m
+
+NoMethodError (undefined method `comments' for nil:NilClass):
+  app/controllers/comments_controller.rb:7:in `create'
+
+Rendered rescues/_trace (34.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 11:47:05) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"}, "commit"=>"Post", "action"=>"create", "post_id"=>"2", "controller"=>"comments", "_"=>""}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:47:05', "perishable_token" = '8FAYopIOyORX7INESll5', "last_request_at" = '2010-09-14 14:47:05' WHERE "id" = 2[0m
+
+NoMethodError (undefined method `comments' for nil:NilClass):
+  app/controllers/comments_controller.rb:7:in `create'
+
+Rendered rescues/_trace (102.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 11:47:05) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"}, "commit"=>"Post", "action"=>"create", "post_id"=>"2", "controller"=>"comments", "_"=>""}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:47:05', "perishable_token" = 'jgJYDCNvdO3MDHDBIFF', "last_request_at" = '2010-09-14 14:47:05' WHERE "id" = 2[0m
+
+NoMethodError (undefined method `comments' for nil:NilClass):
+  app/controllers/comments_controller.rb:7:in `create'
+
+Rendered rescues/_trace (35.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 11:47:06) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"}, "commit"=>"Post", "action"=>"create", "post_id"=>"2", "controller"=>"comments", "_"=>""}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:47:06', "perishable_token" = 'X9ajhpACm7V2YXXosQu', "last_request_at" = '2010-09-14 14:47:06' WHERE "id" = 2[0m
+
+NoMethodError (undefined method `comments' for nil:NilClass):
+  app/controllers/comments_controller.rb:7:in `create'
+
+Rendered rescues/_trace (101.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 11:47:06) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"}, "commit"=>"Post", "action"=>"create", "post_id"=>"2", "controller"=>"comments", "_"=>""}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:47:06', "perishable_token" = 'HaEMKHgXOuuWRSG4weQy', "last_request_at" = '2010-09-14 14:47:06' WHERE "id" = 2[0m
+
+NoMethodError (undefined method `comments' for nil:NilClass):
+  app/controllers/comments_controller.rb:7:in `create'
+
+Rendered rescues/_trace (34.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 11:47:10) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"}, "commit"=>"Post", "action"=>"create", "post_id"=>"2", "controller"=>"comments", "_"=>""}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:47:10', "perishable_token" = 'z1LK37l4XkYSH6ns8Lt', "last_request_at" = '2010-09-14 14:47:10' WHERE "id" = 2[0m
+
+NoMethodError (undefined method `comments' for nil:NilClass):
+  app/controllers/comments_controller.rb:7:in `create'
+
+Rendered rescues/_trace (91.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 11:49:04) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (2.2ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.6ms)
+Rendered comments/_comment (0.7ms)
+Completed in 25ms (View: 17, DB: 1) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 11:49:54) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.6ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.7ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/posts/2]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 11:50:00) [POST]
+  Parameters: {"comment"=>{"comment"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry"}, "commit"=>"Post", "action"=>"create", "post_id"=>"2", "controller"=>"comments", "_"=>""}
+  [4;35;1mUser Load (40.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:50:00', "perishable_token" = 'h3lQUzgnQsAjuzVlHoLf', "last_request_at" = '2010-09-14 14:50:00' WHERE "id" = 2[0m
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("comment", "created_at", "author", "updated_at", "post_id") VALUES('Lorem Ipsum is simply dummy text of the printing and typesetting industry', '2010-09-14 14:50:00', 'Pablo Moreira Mora', '2010-09-14 14:50:00', 2)[0m
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47comments47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/comments/_comment.html.erb:5)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47comments47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/comments/_comment.html.erb:9)
+DEPRECATION WARNING: @comment will no longer be implicitly assigned to comment. (called from _run_erb_app47views47comments47_comment46html46erb_locals_comment_object at /home/insignia4u/Apps/blogajax/app/views/comments/_comment.html.erb:9)
+Rendered comments/_comment (2.1ms)
+Completed in 249ms (View: 4, DB: 41) | 200 OK [http://localhost/posts/2/comments]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-14 11:50:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-14 14:50:08', "perishable_token" = '3pAn3egxgIfGJzhEIWW', "last_request_at" = '2010-09-14 14:50:08' WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (2.5ms)
+Completed in 108ms (View: 7, DB: 1) | 200 OK [http://localhost/posts/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-14 11:50:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-14 14:50:10', "perishable_token" = 'mmPsutb6kqp4059d1OPC', "last_request_at" = '2010-09-14 14:50:10' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/posts
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 101ms (DB: 0) | 302 Found [http://localhost/signup]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:50:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (3.0ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 13ms (View: 5, DB: 3) | 200 OK [http://localhost/posts]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:50:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:50:12', "perishable_token" = 'YxRY2Nwa9WVWM2VBsk60', "last_request_at" = '2010-09-14 14:50:12' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/posts
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 106ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:50:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 68ms (View: 6, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:50:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 11:50:14) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:50:14', "perishable_token" = 'UmDnfSYVognxPEXD35O', "last_request_at" = '2010-09-14 14:50:14' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/posts
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 98ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:50:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (2.3ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 13ms (View: 6, DB: 2) | 200 OK [http://localhost/posts]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-14 11:50:19) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-14 14:50:19', "perishable_token" = 'egR2xG6N4qo7yxq9bnnA', "last_request_at" = '2010-09-14 14:50:19' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/posts
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 101ms (DB: 1) | 302 Found [http://localhost/signup]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:50:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (4.8ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 14ms (View: 5, DB: 5) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-14 11:50:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-14 14:50:21', "perishable_token" = 'KxJfxY8HmOpmZuxc8eu', "last_request_at" = '2010-09-14 14:50:21' WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (1.9ms)
+Completed in 103ms (View: 6, DB: 1) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 11:50:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/posts]

@@ -1,9 +1,13 @@
 class CommentsController < ApplicationController
 
-
+  before_filter :require_user, :only => [:new, :create]
+  
   def create
-      @post = Post.find(params[:post_id])
-      @comment = @post.comments.new(params[:comment])
+      #@post = Post.find(params[:post_id])
+      @comment = Comment.new( :post_id => params[:post_id],
+                               :comment => params[:comment][:comment],
+                               :author  => current_user.full_name
+                             )
 
     if @comment.save
       flash[:notice] = 'Comment was successfully added.'
