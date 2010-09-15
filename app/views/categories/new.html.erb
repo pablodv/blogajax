@@ -1,7 +1,8 @@
 <h1>New Category</h1>
+<br/>
 <% form_tag :action => 'create' do %>
   <label for="category_name">Name</label>
-  <%= text_field 'category', 'name'  %>
+  <%= text_field 'category', 'name'  %><br/>
   <%= submit_tag "Create" %>
 <% end %>
 <br/>
