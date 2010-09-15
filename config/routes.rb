@@ -2,7 +2,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :posts, :has_many => :comments
   map.resources :comments
   map.resources :password_resets
-  
+  map.resources :categories
+
   map.resource  :user_session
   map.resource  :account, :controller => "users"
 
