@@ -1,0 +1,6 @@
+<% unless  @categories%>
+  <% @categories = Category.find(:all, :order => 'name ASC') %>
+  <% @categories.each do |c| %>
+    <%= link_to c.name, :controller => 'posts', :category_id => c.id %>
+  <% end %>
+<% end %>

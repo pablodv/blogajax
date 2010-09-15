@@ -3,8 +3,12 @@ class PostsController < ApplicationController
   
   before_filter :require_user, :only => [:new, :create]
 
-  def index
-    @posts = Post.find(:all, :order => 'title')
+  def index    
+    if params[:category_id]
+      @posts = Post.find_all_by_category_id params[:category_id]
+    else
+      @posts = Post.find(:all, :order => 'title')
+    end
   end
 
   def new
@@ -14,7 +18,8 @@ class PostsController < ApplicationController
   def create
      @post = Post.new( :title => params[:post][:title],
                       :body => params[:post][:body],
-                      :author => current_user.full_name
+                      :author => current_user.full_name,
+                      :category_id => params[:post][:category_id]
     )
 
     if @post.save
@@ -33,5 +38,5 @@ class PostsController < ApplicationController
   def posts
     @posts2 = nil
   end
-
+ 
 end

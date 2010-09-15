@@ -6,5 +6,9 @@
 <p><label for="post_body">Body</label><br/>
 <%= text_area 'post', 'body'  %></p>
 
+<p><label for="post_category">Category</label><br/>
+<%= select 'post', 'category_id', Category.find(:all, :order => 'name ASC').collect {|c| [c.name, c.id]}, {:include_blank => 'Select a category'}%></p>
+
+<p>
 <%#*<p><label for="post_author">Author</label><br/>%>
 <%#= text_field 'post', 'author'  %></p>
