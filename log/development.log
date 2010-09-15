@@ -12216,3 +12216,126 @@ Rendered comments/_comment (0.5ms)
   [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:40:35') ORDER BY created_at DESC[0m
 Rendered posts/_posts (2.0ms)
 Completed in 35ms (View: 24, DB: 1) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 14:28:47) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"posts"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.6ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 17:28:47') ORDER BY created_at DESC[0m
+Rendered posts/_posts (1.9ms)
+Completed in 27ms (View: 19, DB: 1) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 14:28:49) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"posts"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (2.0ms)
+Rendered comments/_comment (0.6ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 17:28:49') ORDER BY created_at DESC[0m
+Rendered posts/_posts (2.0ms)
+Completed in 30ms (View: 20, DB: 1) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 14:31:09) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.6ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 17:31:09') ORDER BY created_at DESC[0m
+Rendered posts/_posts (2.0ms)
+Completed in 28ms (View: 19, DB: 1) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 14:31:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY title[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 17:31:15') ORDER BY created_at DESC[0m
+Rendered posts/_posts (1.8ms)
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 14:31:19) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 17:31:19') ORDER BY created_at DESC[0m
+Rendered posts/_posts (2.4ms)
+Completed in 26ms (View: 16, DB: 1) | 200 OK [http://localhost/posts/4]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 14:31:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY title[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 17:31:21') ORDER BY created_at DESC[0m
+Rendered posts/_posts (1.8ms)
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 14:31:22) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.7ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.7ms)
+Rendered comments/_comment (0.5ms)
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 17:31:22') ORDER BY created_at DESC[0m
+Rendered posts/_posts (1.9ms)
+Completed in 27ms (View: 19, DB: 1) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 14:31:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY title[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 17:31:24') ORDER BY created_at DESC[0m
+Rendered posts/_posts (2.2ms)
+Completed in 23ms (View: 17, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 14:31:26) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"posts"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.5ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (1.6ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.6ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 17:31:26') ORDER BY created_at DESC[0m
+Rendered posts/_posts (1.9ms)
+Completed in 32ms (View: 23, DB: 1) | 200 OK [http://localhost/posts/2]

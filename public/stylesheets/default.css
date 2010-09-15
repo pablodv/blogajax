@@ -152,7 +152,8 @@ a.g2{
     color:#444;
     font-family:Verdana,sans-serif;
     line-height:1.3em;
-    padding:0 10px 10px
+    padding:0 10px 10px;
+    text-align: justify;
     }
 
 .content a{color:#FD1C24}
