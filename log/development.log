@@ -9785,3 +9785,2349 @@ Processing PasswordResetsController#new (for 127.0.0.1 at 2010-09-14 16:31:44) [
 Rendering template within layouts/application
 Rendering password_resets/new
 Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/password_resets/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 16:38:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 18ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 16:38:51) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"posts"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 24ms (View: 15, DB: 0) | 200 OK [http://localhost/posts/3]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-14 16:38:55) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"posts"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (2.4ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Completed in 29ms (View: 20, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-09-14 16:38:57) [POST]
+  Parameters: {"comment"=>{"comment"=>""}, "commit"=>"Post", "action"=>"create", "post_id"=>"1", "controller"=>"comments", "_"=>""}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/posts/1/comments]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 16:38:57) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 78ms (View: 68, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 16:39:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 16:55:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::LANGUAGES) on line #16 of app/views/layouts/application.html.erb:
+13: <div class="main">
+14: <!-- START:i18n -->
+15:   <% form_tag '', :method => 'GET', :class => 'locale' do %>
+16:     <%= select_tag 'locale', options_for_select(LANGUAGES, I18n.locale),
+17:       :onchange => 'this.form.submit()' %>
+18:     <%= submit_tag 'submit' %>
+19:     <%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+
+    app/views/layouts/application.html.erb:16
+    app/views/layouts/application.html.erb:15
+
+Rendered rescues/_trace (48.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 16:59:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::LANGUAGES) on line #15 of app/views/layouts/application.html.erb:
+12: 
+13: <div class="main">
+14:         <% form_tag '', :method => 'GET', :class => 'locale' do %>
+15:           <%= select_tag 'locale', options_for_select(LANGUAGES, I18n.locale),
+16:           :onchange => 'this.form.submit()' %>
+17:           <%= submit_tag 'submit' %>
+18:           <%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+
+    app/views/layouts/application.html.erb:15
+    app/views/layouts/application.html.erb:14
+
+Rendered rescues/_trace (49.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 16:59:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::LANGUAGES) on line #15 of app/views/layouts/application.html.erb:
+12: 
+13: <div class="main">
+14:         <% form_tag '', :method => 'GET', :class => 'locale' do %>
+15:           <%= select_tag 'locale', options_for_select(LANGUAGES, I18n.locale),
+16:           :onchange => 'this.form.submit()' %>
+17:           <%= submit_tag 'submit' %>
+18:           <%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+
+    app/views/layouts/application.html.erb:15
+    app/views/layouts/application.html.erb:14
+
+Rendered rescues/_trace (124.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 16:59:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::LANGUAGES) on line #15 of app/views/layouts/application.html.erb:
+12: 
+13: <div class="main">
+14:         <% form_tag '', :method => 'GET', :class => 'locale' do %>
+15:           <%= select_tag 'locale', options_for_select(LANGUAGES, I18n.locale),
+16:           :onchange => 'this.form.submit()' %>
+17:           <%= submit_tag 'submit' %>
+18:           <%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+
+    app/views/layouts/application.html.erb:15
+    app/views/layouts/application.html.erb:14
+
+Rendered rescues/_trace (49.1ms)
+Rendered rescues/_request_and_response (4.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 16:59:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::LANGUAGES) on line #15 of app/views/layouts/application.html.erb:
+12: 
+13: <div class="main">
+14:         <% form_tag '', :method => 'GET', :class => 'locale' do %>
+15:           <%= select_tag 'locale', options_for_select(LANGUAGES, I18n.locale),
+16:           :onchange => 'this.form.submit()' %>
+17:           <%= submit_tag 'submit' %>
+18:           <%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+
+    app/views/layouts/application.html.erb:15
+    app/views/layouts/application.html.erb:14
+
+Rendered rescues/_trace (53.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 16:59:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::LANGUAGES) on line #15 of app/views/layouts/application.html.erb:
+12: 
+13: <div class="main">
+14:         <% form_tag '', :method => 'GET', :class => 'locale' do %>
+15:           <%= select_tag 'locale', options_for_select(LANGUAGES, I18n.locale),
+16:           :onchange => 'this.form.submit()' %>
+17:           <%= submit_tag 'submit' %>
+18:           <%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+
+    app/views/layouts/application.html.erb:15
+    app/views/layouts/application.html.erb:14
+
+Rendered rescues/_trace (120.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 16:59:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::LANGUAGES) on line #15 of app/views/layouts/application.html.erb:
+12: 
+13: <div class="main">
+14:         <% form_tag '', :method => 'GET', :class => 'locale' do %>
+15:           <%= select_tag 'locale', options_for_select(LANGUAGES, I18n.locale),
+16:           :onchange => 'this.form.submit()' %>
+17:           <%= submit_tag 'submit' %>
+18:           <%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+
+    app/views/layouts/application.html.erb:15
+    app/views/layouts/application.html.erb:14
+
+Rendered rescues/_trace (48.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:01:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::LANGUAGES) on line #15 of app/views/layouts/application.html.erb:
+12: 
+13: <div class="main">
+14:         <% form_tag '', :method => 'GET', :class => 'locale' do %>
+15:           <%= select_tag 'locale', options_for_select(LANGUAGES, I18n.locale),
+16:           :onchange => 'this.form.submit()' %>
+17:           <%= submit_tag 'submit' %>
+18:           <%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+
+    app/views/layouts/application.html.erb:15
+    app/views/layouts/application.html.erb:14
+
+Rendered rescues/_trace (49.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:01:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::LANGUAGES) on line #15 of app/views/layouts/application.html.erb:
+12: 
+13: <div class="main">
+14:         <% form_tag '', :method => 'GET', :class => 'locale' do %>
+15:           <%= select_tag 'locale', options_for_select(LANGUAGES, I18n.locale),
+16:           :onchange => 'this.form.submit()' %>
+17:           <%= submit_tag 'submit' %>
+18:           <%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+
+    app/views/layouts/application.html.erb:15
+    app/views/layouts/application.html.erb:14
+
+Rendered rescues/_trace (127.5ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:01:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 34ms (View: 25, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:01:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:02:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:02:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:02:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 73ms (View: 21, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:03:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 23ms (View: 19, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:03:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:03:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:03:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:03:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 65ms (View: 61, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:03:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:03:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 18ms (View: 14, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:03:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 67ms (View: 63, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:03:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:05:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;36;1mPost Load (0.8ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 24ms (View: 19, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:15:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;35;1mPost Load (0.8ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 24ms (View: 17, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:15:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:15:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;35;1mPost Load (1.3ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:21:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;36;1mPost Load (1.0ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 75ms (View: 69, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:21:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-14 17:21:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts", "locale"=>"en"}
+  [4;36;1mPost Load (1.2ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://localhost/posts?locale=en]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100902183958)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: table "users" already exists: CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "full_name" varchar(255), "login" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "current_login_at" datetime, "last_login_at" datetime, "current_login_ip" varchar(255), "last_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-15 10:14:39) [GET]
+
+ActionController::RoutingError (No route matches "/articles" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 10:14:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (34.2ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 209ms (View: 142, DB: 34) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 10:15:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 22ms (View: 18, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-15 10:22:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 30ms (View: 20, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 10:22:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 67ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-15 10:22:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 16ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-15 10:23:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/posts/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-15 10:23:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 17ms (View: 6, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-15 10:31:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered posts/_list (0.5ms)
+Completed in 74ms (View: 63, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 10:32:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 19ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 10:32:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 10:32:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 67ms (View: 63, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 10:32:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 10:32:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 10:40:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 73ms (View: 68, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 10:40:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.5ms)
+Completed in 22ms (View: 17, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 10:45:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.4ms)
+Completed in 26ms (View: 21, DB: 1) | 200 OK [http://localhost/posts]
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."created_at" = '2010-09-08 13:47:10') LIMIT 1[0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."created_at" = '2010-09-08 13:47:40') LIMIT 1[0m
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 10:51:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.4ms)
+Completed in 26ms (View: 18, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 10:51:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 18ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 10:51:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.7ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 67ms (View: 62, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 10:51:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 10:51:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 10:51:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."created_at" = '2010-09-22 13:53:12') LIMIT 1[0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."created_at" = '2010-09-22 14:00:05') [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."created_at" = '2010-09-08 14:00:17') [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."created_at" = '2010-09-14 14:00:27') [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."created_at" = '2010-09-13 14:00:37') [0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:02:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:07:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:07:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.7ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:08:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:08:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:09:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:09:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.1ms)
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:11:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (1.3ms)
+Completed in 71ms (View: 66, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:13:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.8ms)
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:13:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.8ms)
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:13:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.7ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.9ms)
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:13:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (0.8ms)
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:13:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (1.6ms)
+Completed in 24ms (View: 19, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:14:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (1.3ms)
+Completed in 24ms (View: 19, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:14:43) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"posts"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_list.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title, p %>
+3: <% end %>
+
+    app/views/posts/_list.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (103.8ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:15:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (can't convert ActiveSupport::TimeWithZone into String) on line #2 of app/views/posts/_list.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title + p.created_at, p %>
+3: <% end %>
+
+    app/views/posts/_list.html.erb:2:in `+'
+    app/views/posts/_list.html.erb:2
+    app/views/posts/_list.html.erb:1:in `each'
+    app/views/posts/_list.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (111.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:16:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (wrong number of arguments (2 for 0)) on line #2 of app/views/posts/_list.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title p.created_at, p %>
+3: <% end %>
+
+    app/views/posts/_list.html.erb:2:in `title'
+    app/views/posts/_list.html.erb:2
+    app/views/posts/_list.html.erb:1:in `each'
+    app/views/posts/_list.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (50.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:17:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (1.8ms)
+Completed in 24ms (View: 19, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:20:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_list (1.7ms)
+Completed in 23ms (View: 18, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:22:43) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_list.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br />' + p.created_at.strftime("%B %d, %Y at %I:%M %p").to_s, p %>
+3: <% end %>
+
+    app/views/posts/_list.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (51.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:24:55) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br />' + p.created_at.strftime("%B %d, %Y at %I:%M %p").to_s, p %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (52.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:25:00) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br />' + p.created_at.strftime("%B %d, %Y at %I:%M %p").to_s, p %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (114.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2010-09-15 11:28:01) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"posts"}
+
+NoMethodError (undefined method `layuot' for PostsController:Class):
+  app/controllers/posts_controller.rb:3
+
+Rendered rescues/_trace (31.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:28:18) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Rendering template within layouts/post
+Rendering posts/show
+Completed in 26ms (View: 18, DB: 0) | 200 OK [http://localhost/posts/3]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:28:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/post
+Rendering posts/index
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:28:27) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"posts"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.5ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/post
+Rendering posts/show
+Rendered comments/_comment (2.4ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Completed in 33ms (View: 24, DB: 1) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:29:42) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"posts"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 2) [0m
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 2) [0m
+Rendering template within layouts/post
+Rendering posts/show
+Rendered comments/_comment (1.8ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.6ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+Completed in 84ms (View: 75, DB: 1) | 200 OK [http://localhost/posts/2]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:29:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/post
+Rendering posts/index
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:29:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/post
+Rendering posts/index
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:30:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.1ms)
+Completed in 19ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:30:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.6ms)
+Completed in 24ms (View: 19, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:31:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.5ms)
+Completed in 23ms (View: 18, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-15 11:32:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 56ms (DB: 0) | 302 Found [http://localhost/posts/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-15 11:32:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to '<span>' + p.title.to_s + '</span><br />' + p.created_at.strftime("%B %d, %Y").to_s, p %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (49.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-15 11:32:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 76ms (View: 66, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-09-15 11:32:32) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"pablo2"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'pablo2') LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "failed_login_count" = 1, "updated_at" = '2010-09-15 14:32:32', "perishable_token" = 'hq5Qr2F7PI2DKUtYFpK' WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 247ms (View: 14, DB: 1) | 200 OK [http://localhost/user_session]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-09-15 11:32:36) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"pablo2"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'pablo2') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "login_count" = 18, "failed_login_count" = 0, "updated_at" = '2010-09-15 14:32:36', "perishable_token" = 'Bozz9of3kQxuRtTkDVdg', "last_request_at" = '2010-09-15 14:32:36', "last_login_at" = '2010-09-14 18:51:18', "current_login_at" = '2010-09-15 14:32:36' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/posts/new
+Completed in 104ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2010-09-15 11:32:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"posts"}
+  [4;35;1mUser Load (2.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-15 14:32:36', "perishable_token" = 'nscZgz8YohyRm4NdNr', "last_request_at" = '2010-09-15 14:32:36' WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering posts/new
+Rendered posts/_form (61.9ms)
+Completed in 218ms (View: 91, DB: 3) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2010-09-15 11:33:03) [POST]
+  Parameters: {"commit"=>"Create", "post"=>{"body"=>"ruby on rails ", "title"=>"texto mas largo que pasa"}, "action"=>"create", "controller"=>"posts"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-15 14:33:03', "perishable_token" = 'dfUpZHjRW9F8UDuaP2Mi', "last_request_at" = '2010-09-15 14:33:03' WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "body", "author", "updated_at") VALUES('2010-09-15 14:33:03', 'texto mas largo que pasa', 'ruby on rails ', 'Pablo Moreira Mora', '2010-09-15 14:33:03')[0m
+Redirected to http://localhost:3000/posts
+Completed in 236ms (DB: 1) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:33:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-15 14:33:03', "perishable_token" = '5vkdwFUF396evMrvpae', "last_request_at" = '2010-09-15 14:33:03' WHERE "id" = 2[0m
+Completed in 189ms (View: 183, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-09-15 11:33:08) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-15 14:33:08', "perishable_token" = '3jpbcKKog2E9xSTzuqSf', "last_request_at" = '2010-09-15 14:33:08' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/posts
+Completed in 103ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:33:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:33:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.5ms)
+Completed in 90ms (View: 85, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:33:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.8ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.8ms)
+Completed in 26ms (View: 20, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:34:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.8ms)
+Completed in 23ms (View: 18, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:41:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.5ms)
+Completed in 25ms (View: 18, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:41:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.6ms)
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:41:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (15.6ms)
+Completed in 82ms (View: 77, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:41:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.6ms)
+Completed in 25ms (View: 18, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:41:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.4ms)
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:42:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+
+NoMethodError (undefined method `>=' for :created_at:Symbol):
+  app/models/post.rb:6
+  app/controllers/posts_controller.rb:7:in `index'
+
+Rendered rescues/_trace (42.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:43:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.4ms)
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:44:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.4ms)
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:44:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.6ms)
+Completed in 26ms (View: 20, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:44:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.7ms)
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:44:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.5ms)
+Completed in 82ms (View: 77, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:44:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.8ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.5ms)
+Completed in 25ms (View: 18, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:44:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.4ms)
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:44:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.6ms)
+Completed in 24ms (View: 18, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:45:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.7ms)
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:45:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.5ms)
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:45:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.5ms)
+Completed in 25ms (View: 19, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:45:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.5ms)
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:45:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.7ms)
+Completed in 81ms (View: 76, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:45:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.6ms)
+Completed in 25ms (View: 19, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:45:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.4ms)
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:46:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.5ms)
+Completed in 83ms (View: 78, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:46:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.6ms)
+Completed in 23ms (View: 17, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:46:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.3ms)
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:46:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.6ms)
+Completed in 27ms (View: 21, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:46:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.5ms)
+Completed in 22ms (View: 17, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:46:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.4ms)
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:47:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (2.0ms)
+Completed in 86ms (View: 74, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:47:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.7ms)
+Completed in 22ms (View: 17, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:47:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.5ms)
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:47:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.5ms)
+Completed in 68ms (View: 17, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:47:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.4ms)
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:47:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 22ms (View: 18, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:47:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:47:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:47:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:47:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:47:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:47:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.7ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 66ms (View: 61, DB: 1) | 200 OK [http://localhost/posts]
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."created_at" = '2010-09-13 14:51:06') [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."created_at" = '2010-09-13 14:51:09') [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 11:52:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.4ms)
+Completed in 26ms (View: 21, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:55:06) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, p %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (54.6ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:56:57) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, :contrller => 'posts', :actions => 'show', :id => p.id %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (113.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:56:59) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, :contrller => 'posts', :actions => 'show', :id => p.id %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (112.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:56:59) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, :contrller => 'posts', :actions => 'show', :id => p.id %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (50.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:56:59) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, :contrller => 'posts', :actions => 'show', :id => p.id %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (50.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:56:59) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, :contrller => 'posts', :actions => 'show', :id => p.id %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (55.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:56:59) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, :contrller => 'posts', :actions => 'show', :id => p.id %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (124.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:57:00) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, :contrller => 'posts', :actions => 'show', :id => p.id %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (117.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:57:00) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, :contrller => 'posts', :actions => 'show', :id => p.id %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (50.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:57:00) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, :contrller => 'posts', :actions => 'show', :id => p.id %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (51.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:57:00) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, :contrller => 'posts', :actions => 'show', :id => p.id %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (54.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:57:00) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, :contrller => 'posts', :actions => 'show', :id => p.id %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (118.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:57:00) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, :contrller => 'posts', :actions => 'show', :id => p.id %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (107.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:59:51) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (2.4ms)
+Rendered comments/_comment (0.7ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, :contrller => 'posts', :actions => 'show', :id => p.id %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (50.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 11:59:54) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered comments/_comment (2.0ms)
+Rendered comments/_comment (0.6ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.5ms)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, :contrller => 'posts', :actions => 'show', :id => p.id %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (50.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:00:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.6ms)
+Completed in 76ms (View: 71, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:00:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.3ms)
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:00:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.3ms)
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:00:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.4ms)
+Completed in 22ms (View: 17, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:00:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.8ms)
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:00:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.3ms)
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:00:39) [GET]
+  Parameters: {"actions"=>"show", "contrller"=>"posts", "action"=>"index", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.3ms)
+Completed in 23ms (View: 17, DB: 1) | 200 OK [http://localhost/posts?actions=show&contrller=posts&id=4]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:00:43) [GET]
+  Parameters: {"actions"=>"show", "contrller"=>"posts", "action"=>"index", "id"=>"4", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.3ms)
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts?actions=show&contrller=posts&id=4]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 12:00:44) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, :contrller => 'posts', :actions => 'show', :id => p.id %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (104.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:01:03) [GET]
+  Parameters: {"actions"=>"show", "contrller"=>"posts", "action"=>"index", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (2.1ms)
+Completed in 23ms (View: 18, DB: 1) | 200 OK [http://localhost/posts?actions=show&contrller=posts&id=4]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:01:06) [GET]
+  Parameters: {"actions"=>"show", "contrller"=>"posts", "action"=>"index", "id"=>"4", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.3ms)
+Completed in 77ms (View: 71, DB: 1) | 200 OK [http://localhost/posts?actions=show&contrller=posts&id=4]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:01:11) [GET]
+  Parameters: {"actions"=>"show", "action"=>"index", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.2ms)
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/posts?actions=show&id=4]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:01:13) [GET]
+  Parameters: {"actions"=>"show", "action"=>"index", "id"=>"3", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.2ms)
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/posts?actions=show&id=3]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:01:16) [GET]
+  Parameters: {"actions"=>"show", "action"=>"index", "id"=>"2", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.1ms)
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts?actions=show&id=2]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:01:17) [GET]
+  Parameters: {"actions"=>"show", "action"=>"index", "id"=>"1", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.2ms)
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/posts?actions=show&id=1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:01:18) [GET]
+  Parameters: {"actions"=>"show", "action"=>"index", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.2ms)
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts?actions=show&id=4]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 12:01:20) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/posts/_posts.html.erb:
+1: <% @posts.each do |p|%>
+2:   <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, :controller => 'posts', :actions => 'show', :id => p.id %>
+3: <% end %>
+
+    app/views/posts/_posts.html.erb:1
+    app/views/layouts/application.html.erb:65
+
+Rendered rescues/_trace (106.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 12:02:57) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:02:57') [0m
+Rendered posts/_posts (2.5ms)
+Completed in 27ms (View: 18, DB: 1) | 200 OK [http://localhost/posts/4]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:03:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (1.2ms)
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 12:03:08) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:03:08') [0m
+Rendered posts/_posts (1.7ms)
+Completed in 26ms (View: 17, DB: 1) | 200 OK [http://localhost/posts/4]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:05:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (0.7ms)
+Completed in 22ms (View: 17, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:06:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:06:35') [0m
+Rendered posts/_posts (2.3ms)
+Completed in 23ms (View: 18, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:06:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (0.8ms)
+Completed in 25ms (View: 20, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:07:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.7ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (0.1ms)
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:07:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (0.1ms)
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:07:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (0.9ms)
+Completed in 25ms (View: 19, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:07:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (0.1ms)
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:07:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (0.1ms)
+Completed in 70ms (View: 65, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:07:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (0.1ms)
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:07:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_posts (0.1ms)
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:08:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:08:32') [0m
+Rendered posts/_posts (2.7ms)
+Completed in 76ms (View: 71, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:08:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:08:33') [0m
+Rendered posts/_posts (1.7ms)
+Completed in 26ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:08:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:08:33') [0m
+Rendered posts/_posts (1.8ms)
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 12:08:35) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:08:35') [0m
+Rendered posts/_posts (1.9ms)
+Completed in 25ms (View: 16, DB: 1) | 200 OK [http://localhost/posts/4]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:08:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.6ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:08:40') [0m
+Rendered posts/_posts (1.6ms)
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 12:08:41) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:08:41') [0m
+Rendered posts/_posts (1.6ms)
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/posts/3]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 12:08:57) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"posts"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:08:57') [0m
+Rendered posts/_posts (2.3ms)
+Completed in 78ms (View: 20, DB: 1) | 200 OK [http://localhost/posts/3]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:08:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;35;1mPost Load (0.7ms)[0m   [0mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:08:58') [0m
+Rendered posts/_posts (1.6ms)
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 12:08:59) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:08:59') [0m
+Rendered posts/_posts (1.6ms)
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/posts/3]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:09:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:09:02') [0m
+Rendered posts/_posts (1.7ms)
+Completed in 73ms (View: 68, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:10:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:10:38') [0m
+Rendered posts/_posts (2.3ms)
+Completed in 24ms (View: 19, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 12:10:40) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"posts"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:10:40') [0m
+Rendered posts/_posts (1.9ms)
+Completed in 23ms (View: 15, DB: 1) | 200 OK [http://localhost/posts/3]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 12:10:42) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:10:42') [0m
+Rendered posts/_posts (53.0ms)
+Completed in 74ms (View: 66, DB: 1) | 200 OK [http://localhost/posts/4]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:10:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.7ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:10:44') [0m
+Rendered posts/_posts (2.0ms)
+Completed in 24ms (View: 18, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:12:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:12:55') ORDER BY created_at DESC[0m
+Rendered posts/_posts (2.1ms)
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:13:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY title[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:13:26') ORDER BY created_at DESC[0m
+Rendered posts/_posts (1.8ms)
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 12:13:42) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"posts"}
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 4) [0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 4) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:13:42') ORDER BY created_at DESC[0m
+Rendered posts/_posts (2.0ms)
+Completed in 25ms (View: 16, DB: 1) | 200 OK [http://localhost/posts/4]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-09-15 12:13:44) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"posts"}
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 3) [0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 3) [0m
+Rendering template within layouts/application
+Rendering posts/show
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:13:44') ORDER BY created_at DESC[0m
+Rendered posts/_posts (1.9ms)
+Completed in 23ms (View: 15, DB: 1) | 200 OK [http://localhost/posts/3]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-09-15 12:13:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"posts"}
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" ORDER BY title[0m
+Rendering template within layouts/application
+Rendering posts/index
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (created_at > '2010-09-13 15:13:46') ORDER BY created_at DESC[0m
+Rendered posts/_posts (1.7ms)
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/posts]

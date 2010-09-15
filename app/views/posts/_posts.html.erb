@@ -1,0 +1,7 @@
+<% unless @posts2 %>
+  <% @posts2 = Post.recent %>
+  <% @posts2.each do |p|%>
+    <%= link_to p.title.to_s + '<br /> -- <br />' + p.created_at.strftime("%B %d, %Y").to_s, p %>
+  <% end %>
+<% end %>
+

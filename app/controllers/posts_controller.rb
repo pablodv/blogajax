@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
 
+  
   before_filter :require_user, :only => [:new, :create]
 
   def index
-    @posts = Post.find(:all, :order => 'created_at DESC')
+    @posts = Post.find(:all, :order => 'title')
   end
 
   def new
@@ -27,6 +28,10 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])    
     @comments = @post.comments.collect 
+  end
+
+  def posts
+    @posts2 = nil
   end
 
 end
