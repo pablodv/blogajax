@@ -15885,3 +15885,37 @@ Rendered comments/_comment (3.6ms)
 Rendered posts/_posts (3.9ms)
 Rendered categories/_categories (2.7ms)
 Completed in 190ms (View: 161, DB: 4) | 200 OK [http://localhost/posts/1]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100902183958)
+Migrating to CreatePosts (20100913141458)
+Migrating to CreateComments (20100913141627)
+Migrating to AddAuthorPost (20100913142339)
+Migrating to CreateNotifiers (20100914125209)
+Migrating to CreateUserSessions (20100914125225)
+Migrating to PasswordByUser (20100914141313)
+Migrating to AuthorByComment (20100914143933)
+Migrating to AcitveByUsers (20100914191104)
+Migrating to CreateCategories (20100915183945)
+Migrating to CategoryByPosts (20100915184510)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("categories")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("notifiers")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("posts")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("user_sessions")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_perishable_token')[0m
