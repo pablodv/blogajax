@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-
   before_filter :require_user, :only => [:new, :create]
 
   def categories
@@ -11,9 +10,12 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(params[:name])
+    @category = Category.new(params[:category])
     if @category.save
-      posts_path
+      flash[:notice] = 'Category was successfully created.'
+      redirect_to posts_path
+    else
+      render :action => 'new'
     end
   end
 end

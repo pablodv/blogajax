@@ -1,6 +1,5 @@
-<% unless  @categories%>
-  <% @categories = Category.find(:all, :order => 'name ASC') %>
+<% if @categories%>
   <% @categories.each do |c| %>
-    <%= link_to c.name, :controller => 'posts', :category_id => c.id %>
+    <%= link_to c.name, posts_path, :category_id => c.id %>
   <% end %>
 <% end %>

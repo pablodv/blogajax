@@ -13,9 +13,7 @@ class UsersController < ApplicationController
     if @user.signup!(params)
       @user.deliver_activation_instructions!
       flash[:notice] = "Your account has been created. Please check your e-mail for your account activation instructions!"
- #     if@user.save
-  #     flash[:notice] = "Account registered!"
-      redirect_back_or_default login_path
+      redirect_to root_url
     else
       render :action => :new
     end

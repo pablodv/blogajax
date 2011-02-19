@@ -1,4 +1,3 @@
-
 <p>
   <b>Login:</b>
   <%=h @user.login %>
@@ -9,20 +8,6 @@
   <%=h @user.login_count %>
 </p>
 
-<%#*<p>%>
-  <%#*<b>State:</b>%>
-  <%#=h @user.state %>
-<%#*</p>%>
-
-<%#*<p>%>
-  <%#*<b>Country:</b>%>
-  <%#=h @user.country %>
-<%#*</p>%>
-<%#*<p>%>
-  <%#*<b>Last request at:</b>%>
-  <%#=h @user.last_request_at %>
-<%#*</p>%>
-
 <p>
   <b>Last login at:</b>
   <%=h @user.last_login_at %>
@@ -32,17 +17,6 @@
   <b>Current login at:</b>
   <%=h @user.current_login_at %>
 </p>
-
-<%#*<p>%>
-  <%#*<b>Last login ip:</b>%>
-  <%#=h @user.last_login_ip %>
-<%#*</p>%>
-
-<%#*<p>%>
-  <%#*<b>Current login ip:</b>%>
-  <%#=h @user.current_login_ip %>
-<%#*</p>%>
-
 
 <%= link_to 'Edit', edit_account_path %><br/><br/>
 <%= link_to 'Change Password', :controller => "password_resets" %><br/><br/>

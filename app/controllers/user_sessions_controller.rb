@@ -11,15 +11,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = "Login successful!"
-      unless request.xhr?
-        redirect_back_or_default posts_path
-      else
-#        render :update do |page|
-#          page.replace_html 'posts', :partial => 'comment'
-#          page[:user_sessions_new].clear
-#          page["comment_#commentsp"].visual_effect :highlight, :duration => 3.5
-#        end
-      end
+      redirect_back_or_default posts_path
     else
       render :action => :new
     end
